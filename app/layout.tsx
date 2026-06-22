@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 // Font diload via next/font supaya tidak nambah request ke Google saat runtime
@@ -112,6 +113,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );
