@@ -1,26 +1,65 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  --color-navy: #0D1B3E;
+  --color-navy-mid: #1A2F5E;
+  --color-navy-dark: #080F22;
+  --color-gold: #B8942A;
+  --color-gold-light: #D4AF5A;
+  --color-gold-pale: #F5EDD6;
+  --color-off-white: #F8F7F4;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* scrollbar tipis biar tidak ganggu tampilan */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: #0D1B3E;
+}
+::-webkit-scrollbar-thumb {
+  background: #B8942A;
+  border-radius: 2px;
+}
+
+/* utility classes yang sering dipakai di komponen */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.text-gold {
+  color: #B8942A;
+}
+
+.text-gold-light {
+  color: #D4AF5A;
+}
+
+.bg-navy {
+  background-color: #0D1B3E;
+}
+
+/* animasi reveal saat scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
