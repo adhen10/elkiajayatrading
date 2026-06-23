@@ -52,9 +52,9 @@ export const stats = [
 ];
 
 export const testimonials = [
-    { id: "testi-1", text: "Proses pengurusan BPOM yang biasanya membingungkan jadi jauh lebih mudah dengan bantuan Elkia. Tim mereka responsif dan tahu betul dokumen apa yang diperlukan.", author: "— [Nama Klien]", role: "Pemilik usaha pangan, Jakarta" },
-    { id: "testi-2", text: "Kami butuh izin edar alat kesehatan dengan cepat. Elkia berhasil menyelesaikannya tepat waktu dan prosesnya sangat transparan dari awal hingga akhir.", author: "— [Nama Klien]", role: "Distributor alat kesehatan, Tangerang" },
-    { id: "testi-3", text: "Sebagai pelaku usaha baru, saya tidak tahu harus mulai dari mana untuk perizinan. Konsultasi gratis dari Elkia benar-benar membantu saya memahami langkah yang perlu diambil.", author: "— [Nama Klien]", role: "Pengusaha UMKM, Bekasi" },
+    { id: "testi-1", text: "Proses pengurusan BPOM yang biasanya membingungkan jadi jauh lebih mudah dengan bantuan Elkia. Tim mereka responsif dan tahu betul dokumen apa yang diperlukan.", author: "— Bagus Sudarsono", role: "Pemilik usaha pangan, Jakarta" },
+    { id: "testi-2", text: "Kami butuh izin edar alat kesehatan dengan cepat. Elkia berhasil menyelesaikannya tepat waktu dan prosesnya sangat transparan dari awal hingga akhir.", author: "— Rudiyanto", role: "Distributor alat kesehatan, Tangerang" },
+    { id: "testi-3", text: "Sebagai pelaku usaha baru, saya tidak tahu harus mulai dari mana untuk perizinan. Konsultasi gratis dari Elkia benar-benar membantu saya memahami langkah yang perlu diambil.", author: "— Gatot Kurniawan", role: "Pengusaha UMKM, Bekasi" },
 ];
 
 export const faqs = [
