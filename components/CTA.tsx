@@ -1,6 +1,5 @@
 import { siteConfig, waLink } from "@/data/content";
 import { ArrowUpRight, Mail } from "lucide-react";
-// import { waLink, siteConfig } from "@/data/Content";
 
 // statis, tidak ada interaktivitas — Server Component
 export default function CTA() {
@@ -12,16 +11,17 @@ export default function CTA() {
                     <br />
                     <em className="italic text-[#D4AF5A]">bisnis Anda?</em>
                 </h2>
-                <p className="text-[15px] text-white/55 mb-10 max-w-[480px] mx-auto leading-[1.7]">
+                <p className="text-[15px] text-white/65 mb-10 max-w-[480px] mx-auto leading-[1.7]">
                     Ceritakan kebutuhan Anda kepada kami. Konsultasi pertama gratis, tanpa komitmen.
                 </p>
 
                 <div className="flex gap-4 justify-center flex-wrap">
+                    {/* #128C7E (hijau WhatsApp gelap) + teks putih: kontras lulus WCAG */}
                     <a
                         href={waLink}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.06em] px-7 py-[14px] bg-[#25D366] text-white rounded-sm no-underline hover:opacity-90 transition-opacity duration-200"
+                        className="inline-flex items-center gap-2 text-[13px] font-semibold tracking-[0.06em] px-7 py-[14px] bg-[#128C7E] text-white rounded-sm no-underline hover:bg-[#0E7468] transition-colors duration-200"
                     >
                         Chat via WhatsApp <ArrowUpRight size={14} strokeWidth={2.5} />
                     </a>

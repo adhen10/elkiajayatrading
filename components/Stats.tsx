@@ -9,7 +9,7 @@ export default function Stats() {
             <div className="font-display text-[48px] font-medium text-[#0D1B3E] leading-none mb-2">
               {s.num}
             </div>
-            <div className="text-[12px] font-medium tracking-[0.1em] uppercase text-[#B8942A]">
+            <div className="text-[12px] font-medium tracking-[0.1em] uppercase text-[#8A6D1A]">
               {s.label}
             </div>
           </div>

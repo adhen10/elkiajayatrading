@@ -1,11 +1,13 @@
 export const siteConfig = {
     name: "PT. Elkia Jaya Trading",
+    url: "https://elkiajayatrading.com",
     shortName: "Elkia",
     tagline: "Your Trusted Regulatory Partner",
     slogan: "Mitra Terpercaya dalam Pengurusan Perizinan BPOM, Halal, NIB, PIRT, Izin Edar & HAKI untuk bisnis Anda.",
     location: "Jakarta, Indonesia",
     phone: "0859 5930 3035",
     phoneWA: "6285959303035",
+    phoneTel: "+6285959303035",
     email: "elkiajayatrading@gmail.com",
     instagram: "@elkiaofficial",
     instagramUrl: "https://instagram.com/elkiaofficial",

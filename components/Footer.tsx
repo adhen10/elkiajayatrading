@@ -4,9 +4,11 @@ import { services, navLinks, waLink, siteConfig } from "@/data/content";
 // statis, Server Component — footer tidak butuh interaktivitas apapun
 export default function Footer() {
   const year = new Date().getFullYear();
+  const link =
+    "text-[13px] text-white/60 no-underline hover:text-[#D4AF5A] transition-colors";
 
   return (
-    <footer className="bg-[#080F22] pt-14 px-[5%] pb-8 text-white/45">
+    <footer className="bg-[#080F22] pt-14 px-[5%] pb-8 text-white/60">
       <div className="max-w-[1160px] mx-auto grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr] gap-12 pb-10 border-b border-white/7 mb-7">
         <div>
           <div className="font-display text-[28px] font-semibold text-white tracking-[6px] mb-1.5">
@@ -22,20 +24,31 @@ export default function Footer() {
 
           <address className="mt-5 not-italic space-y-2">
             <p className="flex items-center gap-2 text-[13px]">
-              <MapPin size={14} className="text-[#D4AF5A] shrink-0" />
+              <MapPin size={14} aria-hidden="true" className="text-[#D4AF5A] shrink-0" />
               {siteConfig.location}
             </p>
             <p className="flex items-center gap-2 text-[13px]">
-              <Phone size={14} className="text-[#D4AF5A] shrink-0" />
-              {siteConfig.phone}
+              <Phone size={14} aria-hidden="true" className="text-[#D4AF5A] shrink-0" />
+              <a href={`tel:${siteConfig.phoneTel}`} className="text-white/60 no-underline hover:text-[#D4AF5A] transition-colors">
+                {siteConfig.phone}
+              </a>
             </p>
             <p className="flex items-center gap-2 text-[13px]">
-              <Mail size={14} className="text-[#D4AF5A] shrink-0" />
-              {siteConfig.email}
+              <Mail size={14} aria-hidden="true" className="text-[#D4AF5A] shrink-0" />
+              <a href={`mailto:${siteConfig.email}`} className="text-white/60 no-underline hover:text-[#D4AF5A] transition-colors">
+                {siteConfig.email}
+              </a>
             </p>
             <p className="flex items-center gap-2 text-[13px]">
-              <AtSign size={14} className="text-[#D4AF5A] shrink-0" />
-              {siteConfig.instagram}
+              <AtSign size={14} aria-hidden="true" className="text-[#D4AF5A] shrink-0" />
+              <a
+                href={siteConfig.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/60 no-underline hover:text-[#D4AF5A] transition-colors"
+              >
+                {siteConfig.instagram}
+              </a>
             </p>
           </address>
         </div>
@@ -47,10 +60,7 @@ export default function Footer() {
           <ul className="list-none p-0 m-0 space-y-2.5">
             {services.map((s) => (
               <li key={s.id}>
-                <a
-                  href={`#${s.id}`}
-                  className="text-[13px] text-white/45 no-underline hover:text-[#D4AF5A] transition-colors"
-                >
+                <a href={`#${s.id}`} className={link}>
                   {s.name}
                 </a>
               </li>
@@ -65,31 +75,18 @@ export default function Footer() {
           <ul className="list-none p-0 m-0 space-y-2.5">
             {navLinks.map((l) => (
               <li key={l.label}>
-                <a
-                  href={l.href}
-                  className="text-[13px] text-white/45 no-underline hover:text-[#D4AF5A] transition-colors"
-                >
+                <a href={l.href} className={link}>
                   {l.label}
                 </a>
               </li>
             ))}
             <li>
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13px] text-white/45 no-underline hover:text-[#D4AF5A] transition-colors"
-              >
+              <a href={waLink} target="_blank" rel="noopener noreferrer" className={link}>
                 Konsultasi Gratis
               </a>
             </li>
             <li>
-              <a
-                href={siteConfig.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[13px] text-white/45 no-underline hover:text-[#D4AF5A] transition-colors"
-              >
+              <a href={siteConfig.instagramUrl} target="_blank" rel="noopener noreferrer" className={link}>
                 Instagram
               </a>
             </li>

@@ -1,55 +1,47 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
+import { siteConfig } from "@/data/content";
 import "./globals.css";
 
-// Font diload via next/font supaya tidak nambah request ke Google saat runtime
+// Variabel diberi nama --font-cormorant / --font-inter, lalu dipetakan
+// ke utility font-display / font-body di globals.css (@theme inline).
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   style: ["normal", "italic"],
-  variable: "--font-display",
+  variable: "--font-cormorant",
   display: "swap",
 });
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
-  variable: "--font-body",
+  variable: "--font-inter",
   display: "swap",
 });
 
+const title = "Elkia – Jasa Perizinan BPOM, Halal, NIB & HAKI Jakarta";
+
 export const metadata: Metadata = {
   title: {
-    default: "Elkia – Jasa Perizinan BPOM, Halal, NIB & HAKI Jakarta",
+    default: title,
     template: "%s | Elkia",
   },
   description:
     "PT. Elkia Jaya Trading — konsultan perizinan terpercaya di Jakarta. Urus BPOM, Halal MUI, NIB OSS, PIRT, Izin Edar & HAKI dengan cepat dan transparan. Konsultasi gratis.",
-  keywords: [
-    "jasa perizinan BPOM Jakarta",
-    "konsultan halal MUI Jakarta",
-    "pengurusan NIB OSS",
-    "izin PIRT Jakarta",
-    "izin edar alat kesehatan",
-    "pendaftaran HAKI merek",
-    "konsultan perizinan usaha Jakarta",
-    "PT Elkia Jaya Trading",
-  ],
-  metadataBase: new URL("https://elkiajayatrading.com"),
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL(siteConfig.url),
+  alternates: { canonical: "/" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://elkiajayatrading.com",
-    siteName: "PT. Elkia Jaya Trading",
-    title: "Elkia – Jasa Perizinan BPOM, Halal, NIB & HAKI Jakarta",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title,
     description:
       "Konsultan perizinan terpercaya di Jakarta. Urus BPOM, Halal, NIB, PIRT, Izin Edar & HAKI dengan cepat. Konsultasi gratis.",
     images: [
       {
-        url: "/images/og-image.jpg",
+        url: "/images/og-image.jpg", // file 1200x630 harus ada di public/images/
         width: 1200,
         height: 630,
         alt: "PT. Elkia Jaya Trading – Konsultan Perizinan Jakarta",
@@ -58,43 +50,43 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Elkia – Jasa Perizinan BPOM, Halal, NIB & HAKI Jakarta",
+    title,
     description: "Konsultan perizinan terpercaya di Jakarta. Konsultasi gratis.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 
-// Schema markup untuk bisnis lokal — bantu Google Maps dan pencarian lokal Jakarta
+/*
+  Schema bisnis. Hanya isi data yang BENAR dan sama persis dengan
+  Google Business Profile. Yang belum pasti (alamat jalan, jam buka)
+  sengaja belum dimasukkan — tambahkan setelah dikonfirmasi client:
+    address.streetAddress, address.postalCode, openingHoursSpecification
+*/
 const schema = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  name: "PT. Elkia Jaya Trading",
+  "@type": "ProfessionalService",
+  "@id": `${siteConfig.url}/#business`,
+  name: siteConfig.name,
   description:
-    "Konsultan perizinan terpercaya di Jakarta untuk kebutuhan BPOM, Halal, NIB, PIRT, Izin Edar, dan HAKI.",
-  url: "https://elkiajayatrading.com",
-  telephone: "+6285959303035",
-  email: "elkiajayatrading@gmail.com",
+    "Konsultan perizinan di Jakarta untuk kebutuhan BPOM, Halal, NIB, PIRT, Izin Edar, dan HAKI.",
+  url: siteConfig.url,
+  logo: `${siteConfig.url}/images/logo.png`,
+  image: `${siteConfig.url}/images/og-image.jpg`,
+  telephone: siteConfig.phoneTel,
+  email: siteConfig.email,
+  areaServed: { "@type": "City", name: "Jakarta" },
   address: {
     "@type": "PostalAddress",
     addressLocality: "Jakarta",
+    addressRegion: "DKI Jakarta",
     addressCountry: "ID",
   },
-  sameAs: ["https://instagram.com/elkiaofficial"],
-  openingHoursSpecification: {
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    opens: "09:00",
-    closes: "17:00",
-  },
+  sameAs: [siteConfig.instagramUrl],
 };
 
 export default function RootLayout({
@@ -107,12 +99,13 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          dangerouslySetInnerHTML={{
+            // escape "<" supaya string apa pun di data tidak bisa menutup tag <script>
+            __html: JSON.stringify(schema).replace(/</g, "\\u003c"),
+          }}
         />
       </head>
-      <body className="font-body antialiased">
-        {children}
-      </body>
+      <body className="font-body antialiased">{children}</body>
     </html>
   );
 }

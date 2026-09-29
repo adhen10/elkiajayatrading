@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { navLinks, waLink } from "@/data/content";
-// import { navLinks, waLink, siteConfig } from "@/data/Content";
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -12,7 +11,7 @@ export default function Navbar() {
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 50);
-        window.addEventListener("scroll", onScroll);
+        window.addEventListener("scroll", onScroll, { passive: true });
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
@@ -21,29 +20,29 @@ export default function Navbar() {
     return (
         <div className="fixed top-4 left-0 right-0 z-50 flex justify-center px-6">
             <motion.nav
+                aria-label="Navigasi utama"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className={`w-full max-w-[860px] flex items-center justify-between px-6 h-[52px] rounded-full border transition-all duration-300 ${scrolled
-                        ? "bg-[#0D1B3E] border-[#B8942A]/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
-                        : "bg-[#0D1B3E]/70 border-[#B8942A]/15"
+                    ? "bg-[#0D1B3E] border-[#B8942A]/40 shadow-[0_8px_32px_rgba(0,0,0,0.4)]"
+                    : "bg-[#0D1B3E]/70 border-[#B8942A]/15"
                     } backdrop-blur-md`}
             >
-                {/* Logo */}
                 <a
                     href="#beranda"
+                    aria-label="Elkia – ke beranda"
                     className="font-display text-[18px] font-semibold text-white tracking-[5px] no-underline shrink-0"
                 >
                     EL<span className="text-[#D4AF5A]">KIA</span>
                 </a>
 
-                {/* Links desktop */}
                 <ul className="hidden md:flex gap-7 list-none m-0 p-0">
                     {navLinks.map((l) => (
                         <li key={l.label}>
                             <a
                                 href={l.href}
-                                className="text-[12px] text-white/60 no-underline tracking-[0.04em] hover:text-[#D4AF5A] transition-colors duration-200"
+                                className="text-[12px] text-white/70 no-underline tracking-[0.04em] hover:text-[#D4AF5A] transition-colors duration-200"
                             >
                                 {l.label}
                             </a>
@@ -51,7 +50,6 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* CTA desktop */}
                 <a
                     href={waLink}
                     target="_blank"
@@ -61,11 +59,12 @@ export default function Navbar() {
                     Konsultasi <ChevronRight size={12} strokeWidth={2.5} />
                 </a>
 
-                {/* Hamburger */}
                 <button
                     onClick={() => setOpen(!open)}
                     className="md:hidden flex items-center justify-center bg-transparent border-none cursor-pointer text-white p-1"
-                    aria-label="Toggle menu"
+                    aria-label={open ? "Tutup menu" : "Buka menu"}
+                    aria-expanded={open}
+                    aria-controls="mobile-menu"
                 >
                     <AnimatePresence mode="wait">
                         {open ? (
@@ -93,10 +92,10 @@ export default function Navbar() {
                 </button>
             </motion.nav>
 
-            {/* Mobile dropdown */}
             <AnimatePresence>
                 {open && (
                     <motion.div
+                        id="mobile-menu"
                         initial={{ opacity: 0, y: -8, scale: 0.97 }}
                         animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: -8, scale: 0.97 }}

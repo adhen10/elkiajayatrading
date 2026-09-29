@@ -1,9 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { ArrowRight, ExternalLink, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import { services, waLink } from "@/data/content";
+import { services, waLink, siteConfig } from "@/data/content";
 
 const pills = services.map((s) => ({ label: s.tag, href: `#${s.id}` }));
 
@@ -16,8 +17,9 @@ const fadeUp = (delay = 0) => ({
 export default function Hero() {
     const bgRef = useRef<HTMLDivElement>(null);
 
-    // parallax ringan saat scroll
+    // parallax ringan saat scroll (dimatikan kalau pengunjung memilih reduce motion)
     useEffect(() => {
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
         const handleScroll = () => {
             if (bgRef.current) {
                 bgRef.current.style.transform = `translateY(${window.scrollY * 0.4}px)`;
@@ -41,10 +43,15 @@ export default function Hero() {
     return (
         <section id="beranda" className="relative min-h-screen flex items-center overflow-hidden">
             <div ref={bgRef} className="absolute inset-0 scale-110 will-change-transform">
-                <img
-                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600&q=80"
-                    alt="Pelabuhan logistik untuk jasa perizinan ekspor impor Jakarta"
-                    className="w-full h-full object-cover"
+                {/* Gambar lokal (unduh dari Unsplash, kompres ke WebP ~200KB) -> public/images/hero.webp.
+                    alt kosong karena dekoratif; makna halaman dibawa oleh teks h1. */}
+                <Image
+                    src="/images/hero.jpg"
+                    alt=""
+                    fill
+                    priority
+                    sizes="100vw"
+                    className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-[#080F22]/95 via-[#0D1B3E]/85 to-[#0D1B3E]/50" />
             </div>
@@ -55,29 +62,24 @@ export default function Hero() {
             <div className="relative z-10 w-full max-w-[1160px] mx-auto px-[5%] pt-[120px] pb-[80px] grid grid-cols-1 md:grid-cols-[1fr_380px] gap-16 items-center">
                 <div>
                     <motion.div {...fadeUp(0.1)} className="mb-6">
-                        <span className="text-[10px] font-semibold tracking-[0.3em] text-white/30 uppercase">
-                            PT. ELKIA JAYA TRADING
+                        <span className="text-[10px] font-semibold tracking-[0.3em] text-white/60 uppercase">
+                            {siteConfig.name}
                         </span>
                     </motion.div>
 
-                    {/* h1 cuma satu di seluruh halaman — ini yang Google baca sebagai judul utama */}
-                    <motion.h1
-                        {...fadeUp(0.25)}
-                        className="font-display text-[clamp(44px,6vw,70px)] font-medium text-white leading-[1.1] mb-5"
-                    >
-                        Perizinan <em className="italic text-[#D4AF5A]">tepat,</em>
+                    {/* h1 & paragraf pertama TANPA animasi opacity:
+                        ini elemen LCP, harus terlihat begitu HTML tiba (skor kecepatan + SEO). */}
+                    <h1 className="font-display text-[clamp(40px,5.6vw,66px)] font-medium text-white leading-[1.1] mb-5">
+                        Jasa Perizinan <em className="italic text-[#D4AF5A]">BPOM, Halal &amp; NIB</em>
                         <br />
-                        bisnis bergerak.
-                    </motion.h1>
+                        di Jakarta
+                    </h1>
 
-                    <motion.p
-                        {...fadeUp(0.4)}
-                        className="text-[15px] font-light text-white/60 leading-[1.8] mb-10 max-w-[460px] border-l-2 border-[#B8942A] pl-4"
-                    >
-                        Mitra Terpercaya dalam Pengurusan Perizinan BPOM, Halal, NIB, PIRT, Izin Edar & HAKI untuk bisnis Anda.
-                    </motion.p>
+                    <p className="text-[15px] font-light text-white/70 leading-[1.8] mb-10 max-w-[460px] border-l-2 border-[#B8942A] pl-4">
+                        Perizinan tepat, bisnis bergerak. Mitra terpercaya dalam pengurusan BPOM, Halal, NIB, PIRT, Izin Edar &amp; HAKI untuk bisnis Anda.
+                    </p>
 
-                    <motion.div {...fadeUp(0.55)} className="flex gap-4 flex-wrap items-center">
+                    <motion.div {...fadeUp(0.3)} className="flex gap-4 flex-wrap items-center">
                         <a
                             href={waLink}
                             target="_blank"
@@ -88,7 +90,7 @@ export default function Hero() {
                         </a>
                         <a
                             href="#layanan"
-                            className="inline-flex items-center gap-2 text-[13px] text-white/50 no-underline hover:text-[#D4AF5A] transition-colors duration-200"
+                            className="inline-flex items-center gap-2 text-[13px] text-white/60 no-underline hover:text-[#D4AF5A] transition-colors duration-200"
                         >
                             Lihat layanan kami <ExternalLink size={12} strokeWidth={1.5} />
                         </a>
@@ -111,7 +113,7 @@ export default function Hero() {
                             <span className="flex-1 h-px bg-[#B8942A]/30" />
                         </div>
                         <div className="text-[10px] tracking-[0.14em] text-[#D4AF5A] uppercase">
-                            Your Trusted Regulatory Partner
+                            {siteConfig.tagline}
                         </div>
                     </div>
 
@@ -137,14 +139,15 @@ export default function Hero() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.8 }}
+                aria-hidden="true"
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
             >
-                <span className="text-[9px] tracking-[0.2em] text-white/25 uppercase">Scroll</span>
+                <span className="text-[9px] tracking-[0.2em] text-white/40 uppercase">Scroll</span>
                 <motion.div
                     animate={{ y: [0, 6, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                 >
-                    <ChevronDown size={16} className="text-[#B8942A]/50" />
+                    <ChevronDown size={16} className="text-[#B8942A]/60" />
                 </motion.div>
             </motion.div>
         </section>
