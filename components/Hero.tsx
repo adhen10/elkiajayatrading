@@ -72,7 +72,7 @@ export default function Hero() {
                     <h1 className="font-display text-[clamp(40px,5.6vw,66px)] font-medium text-white leading-[1.1] mb-5">
                         Jasa Perizinan <em className="italic text-[#D4AF5A]">BPOM, Halal &amp; NIB</em>
                         <br />
-                        di Jakarta
+                        di Jabodetabek
                     </h1>
 
                     <p className="text-[15px] font-light text-white/70 leading-[1.8] mb-10 max-w-[460px] border-l-2 border-[#B8942A] pl-4">

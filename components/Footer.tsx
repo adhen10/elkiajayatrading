@@ -18,7 +18,7 @@ export default function Footer() {
             {siteConfig.tagline}
           </div>
           <p className="text-[13px] leading-[1.75] max-w-[300px]">
-            {siteConfig.name} — konsultan perizinan terpercaya di Jakarta untuk kebutuhan
+            {siteConfig.name}{siteConfig.name} — konsultan perizinan terpercaya di Jabodetabek untuk kebutuhan
             BPOM, Halal, NIB, PIRT, Izin Edar, dan HAKI.
           </p>
 

@@ -20,7 +20,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = "Elkia – Jasa Perizinan BPOM, Halal, NIB & HAKI Jakarta";
+const title = "Jasa Perizinan BPOM, Halal & NIB | Jakarta, Bekasi, Tangerang";
 
 export const metadata: Metadata = {
   title: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s | Elkia",
   },
   description:
-    "PT. Elkia Jaya Trading — konsultan perizinan terpercaya di Jakarta. Urus BPOM, Halal MUI, NIB OSS, PIRT, Izin Edar & HAKI dengan cepat dan transparan. Konsultasi gratis.",
+    "PT. Elkia Jaya Trading — konsultan perizinan BPOM, Halal MUI, NIB OSS, PIRT, Izin Edar & HAKI untuk pelaku usaha di Jakarta, Bekasi, Tangerang, Depok & Bogor. Konsultasi gratis.",
   metadataBase: new URL(siteConfig.url),
   alternates: { canonical: "/" },
   openGraph: {
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title,
     description:
-      "Konsultan perizinan terpercaya di Jakarta. Urus BPOM, Halal, NIB, PIRT, Izin Edar & HAKI dengan cepat. Konsultasi gratis.",
+      "Konsultan perizinan BPOM, Halal, NIB, PIRT, Izin Edar & HAKI untuk pelaku usaha di Jakarta, Bekasi, Tangerang, Depok & Bogor. Konsultasi gratis.",
     images: [
       {
-        url: "/images/og-image.jpg", // file 1200x630 harus ada di public/images/
+        url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "PT. Elkia Jaya Trading – Konsultan Perizinan Jakarta",
+        alt: "PT. Elkia Jaya Trading – Konsultan Perizinan Jabodetabek",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title,
-    description: "Konsultan perizinan terpercaya di Jakarta. Konsultasi gratis.",
+    description: "Konsultan perizinan BPOM, Halal & NIB di Jakarta, Bekasi, Tangerang. Konsultasi gratis.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -79,11 +79,16 @@ const schema = {
   image: `${siteConfig.url}/images/og-image.jpg`,
   telephone: siteConfig.phoneTel,
   email: siteConfig.email,
-  areaServed: { "@type": "City", name: "Jakarta" },
+  areaServed: ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"].map((name) => ({
+    "@type": "City",
+    name,
+  })),
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Jakarta",
-    addressRegion: "DKI Jakarta",
+    streetAddress: "Suropati Residence, Jl. Raflesia II Blok F10 No. 9, Srimukti",
+    addressLocality: "Tambun Utara",
+    addressRegion: "Jawa Barat",
+    postalCode: "17510",
     addressCountry: "ID",
   },
   sameAs: [siteConfig.instagramUrl],

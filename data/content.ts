@@ -4,7 +4,7 @@ export const siteConfig = {
     shortName: "Elkia",
     tagline: "Your Trusted Regulatory Partner",
     slogan: "Mitra Terpercaya dalam Pengurusan Perizinan BPOM, Halal, NIB, PIRT, Izin Edar & HAKI untuk bisnis Anda.",
-    location: "Jakarta, Indonesia",
+    location: "Tambun Utara, Kab. Bekasi, Jawa Barat",
     phone: "0859 5930 3035",
     phoneWA: "6285959303035",
     phoneTel: "+6285959303035",
@@ -36,7 +36,7 @@ export const whyElkia = [
     { title: "Proses cepat & transparan", desc: "Setiap tahap pengajuan kami informasikan secara berkala. Tidak ada biaya tersembunyi, tidak ada waktu tunggu yang tidak pasti." },
     { title: "Spesialis regulasi Indonesia", desc: "Tim kami memahami detail regulasi BPOM, Kemenkes, Kementan & Bea Cukai — sehingga bisnis Anda berjalan lebih cepat dan akurat." },
     { title: "Satu pintu, semua izin", desc: "Dari BPOM hingga HAKI, Anda tidak perlu berpindah-pindah konsultan. Elkia menangani semuanya dalam satu koordinasi." },
-    { title: "Berbasis di Jakarta", desc: "Kantor di Jakarta memungkinkan kami bergerak cepat untuk koordinasi langsung dengan instansi pemerintah yang relevan." },
+    { title: "Melayani Jabodetabek", desc: "Kami melayani pelaku usaha di Jakarta, Bogor, Depok, Tangerang, dan Bekasi, serta membantu koordinasi dengan instansi pemerintah yang relevan." },
 ];
 
 export const processSteps = [
@@ -47,7 +47,7 @@ export const processSteps = [
 ];
 
 export const stats = [
-    { num: "Jakarta", label: "Berbasis di Jabodetabek" },
+    { num: "Jabodetabek", label: "Wilayah layanan" },
     { num: "6+", label: "Jenis perizinan ditangani" },
     { num: "24 jam", label: "Respon konsultasi" },
     { num: "Gratis", label: "Konsultasi" },
