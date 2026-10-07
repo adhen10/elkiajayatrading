@@ -23,7 +23,7 @@ export default function Services() {
                     <h2 className="font-display text-[clamp(30px,3.5vw,46px)] font-medium text-[#0D1B3E] leading-[1.15]">
                         Layanan Perizinan Usaha:
                         <br />
-                        BPOM, Halal, NIB, PIRT, Izin Edar &amp; HAKI
+                        BPOM, Halal, Import, Custom Clearance &amp; HAKI
                     </h2>
                 </div>
 

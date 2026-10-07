@@ -1,7 +1,11 @@
 "use client";
 
+import { Zap, ShieldCheck, Layers, MapPin } from "lucide-react";
 import { whyElkia } from "@/data/content";
 import { useReveal } from "@/hooks/useReveal";
+
+// urutan ikon mengikuti urutan item di whyElkia (data/content.ts)
+const icons = [Zap, ShieldCheck, Layers, MapPin];
 
 export default function WhyElkia() {
   const head = useReveal();
@@ -35,18 +39,23 @@ export default function WhyElkia() {
           className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#ECECEC] border border-[#ECECEC] transition-all duration-700 ${grid.visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
         >
-          {whyElkia.map((c) => (
-            <div
-              key={c.title}
-              className="bg-white p-9 hover:bg-[#F0EDE6] transition-colors duration-200"
-            >
-              <div className="w-8 h-[2px] bg-[#B8942A] mb-5" />
-              <h3 className="font-display text-[20px] font-medium text-[#0D1B3E] mb-3 leading-[1.3]">
-                {c.title}
-              </h3>
-              <p className="text-[13.5px] text-[#6B6B6B] leading-[1.7]">{c.desc}</p>
-            </div>
-          ))}
+          {whyElkia.map((c, i) => {
+            const Icon = icons[i % icons.length];
+            return (
+              <div
+                key={c.title}
+                className="bg-white p-9 hover:bg-[#F0EDE6] transition-colors duration-200"
+              >
+                <div className="w-12 h-12 rounded-full bg-[#F5EDD6] flex items-center justify-center mb-5">
+                  <Icon size={22} strokeWidth={1.7} className="text-[#8A6D1A]" aria-hidden="true" />
+                </div>
+                <h3 className="font-display text-[20px] font-medium text-[#0D1B3E] mb-3 leading-[1.3]">
+                  {c.title}
+                </h3>
+                <p className="text-[13.5px] text-[#6B6B6B] leading-[1.7]">{c.desc}</p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AtSign, Mail, MapPin, Phone } from "lucide-react";
 import { services, navLinks, waLink, siteConfig } from "@/data/content";
 
@@ -18,8 +19,8 @@ export default function Footer() {
             {siteConfig.tagline}
           </div>
           <p className="text-[13px] leading-[1.75] max-w-[300px]">
-            {siteConfig.name}{siteConfig.name} — konsultan perizinan terpercaya di Jabodetabek untuk kebutuhan
-            BPOM, Halal, NIB, PIRT, Izin Edar, dan HAKI.
+            {siteConfig.name} — konsultan perizinan terpercaya di Jabodetabek untuk kebutuhan
+            BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, PIRT, Izin Edar, dan HAKI.
           </p>
 
           <address className="mt-5 not-italic space-y-2">
@@ -54,30 +55,30 @@ export default function Footer() {
         </div>
 
         <nav aria-label="Layanan">
-          <h4 className="text-[11px] font-medium tracking-[0.14em] uppercase text-[#D4AF5A] mb-4">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] uppercase text-[#D4AF5A] mb-4">
             Layanan
-          </h4>
+          </h2>
           <ul className="list-none p-0 m-0 space-y-2.5">
             {services.map((s) => (
               <li key={s.id}>
-                <a href={`#${s.id}`} className={link}>
+                <Link href={`/layanan/#${s.id}`} className={link}>
                   {s.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
 
         <nav aria-label="Perusahaan">
-          <h4 className="text-[11px] font-medium tracking-[0.14em] uppercase text-[#D4AF5A] mb-4">
+          <h2 className="text-[11px] font-medium tracking-[0.14em] uppercase text-[#D4AF5A] mb-4">
             Perusahaan
-          </h4>
+          </h2>
           <ul className="list-none p-0 m-0 space-y-2.5">
             {navLinks.map((l) => (
               <li key={l.label}>
-                <a href={l.href} className={link}>
+                <Link href={l.href} className={link}>
                   {l.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>

@@ -1,18 +1,59 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, ExternalLink, ChevronDown } from "lucide-react";
-import { motion } from "framer-motion";
-import { services, waLink, siteConfig } from "@/data/content";
-
-const pills = services.map((s) => ({ label: s.tag, href: `#${s.id}` }));
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { waLink, siteConfig } from "@/data/content";
 
 const fadeUp = (delay = 0) => ({
     initial: { opacity: 0, y: 28 },
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.7, ease: "easeOut" as const, delay },
 });
+
+// Kata emas yang bergantian. Tambah/ubah isi daftar ini kalau ingin kata lain.
+const rotating = ["BPOM", "Halal", "Custom Clearance"];
+
+// Emas lebih terang + bayangan gelap berlapis, supaya terbaca di atas foto yang ramai.
+// Ubah warna di sini (satu tempat) kalau ingin menyetel lagi.
+const goldText =
+    "italic text-[#F5D77A] [text-shadow:0_2px_4px_rgba(0,0,0,0.55),0_4px_24px_rgba(0,0,0,0.85)]";
+
+function RotatingWord() {
+    const [i, setI] = useState(0);
+    const reduce = useReducedMotion();
+
+    useEffect(() => {
+        if (reduce) return;
+        const t = setInterval(() => setI((n) => (n + 1) % rotating.length), 2800);
+        return () => clearInterval(t);
+    }, [reduce]);
+
+    // pengunjung memilih reduce motion: tampilkan statis, tanpa gerak
+    if (reduce) {
+        return <em className={`block ${goldText}`}>BPOM, Halal &amp; Custom Clearance</em>;
+    }
+
+    // tinggi tetap + overflow-hidden: kata masuk/keluar seperti terpotong rapi, h1 tidak melompat
+    return (
+        <span className="block relative overflow-hidden h-[1.3em]">
+            <AnimatePresence mode="wait" initial={false}>
+                <motion.em
+                    key={rotating[i]}
+                    initial={{ y: "100%", opacity: 0 }}
+                    animate={{ y: "0%", opacity: 1 }}
+                    exit={{ y: "-100%", opacity: 0 }}
+                    transition={{ duration: 0.45, ease: "easeInOut" }}
+                    className={`block ${goldText}`}
+                >
+                    {rotating[i]}
+                </motion.em>
+            </AnimatePresence>
+        </span>
+    );
+}
 
 export default function Hero() {
     const bgRef = useRef<HTMLDivElement>(null);
@@ -29,54 +70,49 @@ export default function Hero() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const handlePillClick = (e: React.MouseEvent, href: string) => {
-        e.preventDefault();
-        const target = document.querySelector(href);
-        if (!target) return;
-        target.scrollIntoView({ behavior: "smooth", block: "center" });
-        (target as HTMLElement).style.outline = "2px solid #B8942A";
-        setTimeout(() => {
-            (target as HTMLElement).style.outline = "";
-        }, 1800);
-    };
-
     return (
         <section id="beranda" className="relative min-h-screen flex items-center overflow-hidden">
             <div ref={bgRef} className="absolute inset-0 scale-110 will-change-transform">
-                {/* Gambar lokal (unduh dari Unsplash, kompres ke WebP ~200KB) -> public/images/hero.webp.
+                {/* Gambar lokal -> public/images/hero.webp.
                     alt kosong karena dekoratif; makna halaman dibawa oleh teks h1. */}
                 <Image
-                    src="/images/hero.jpg"
+                    src="/images/hero.webp"
                     alt=""
                     fill
                     priority
                     sizes="100vw"
                     className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#080F22]/95 via-[#0D1B3E]/85 to-[#0D1B3E]/50" />
+                {/* Tanpa gradasi: foto terlihat jelas. Lapisan rata 25% ini hanya menjaga teks putih tetap terbaca.
+                    Ubah angka /25 (mis. /10 lebih terang, /40 lebih gelap) atau hapus baris ini untuk foto polos. */}
+                <div className="absolute inset-0 bg-[#0D1B3E]/25" />
             </div>
 
             <div className="absolute top-[-200px] right-[-200px] w-[600px] h-[600px] rounded-full border border-[#B8942A]/8 pointer-events-none" />
             <div className="absolute top-[-80px] right-[-80px] w-[380px] h-[380px] rounded-full border border-[#B8942A]/5 pointer-events-none" />
 
-            <div className="relative z-10 w-full max-w-[1160px] mx-auto px-[5%] pt-[120px] pb-[80px] grid grid-cols-1 md:grid-cols-[1fr_380px] gap-16 items-center">
-                <div>
+            <div className="relative z-10 w-full max-w-[1160px] mx-auto px-[5%] pt-[120px] pb-[80px]">
+                <div className="max-w-[820px]">
                     <motion.div {...fadeUp(0.1)} className="mb-6">
-                        <span className="text-[10px] font-semibold tracking-[0.3em] text-white/60 uppercase">
+                        <span className="text-[11px] font-semibold tracking-[0.3em] text-white uppercase [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]">
                             {siteConfig.name}
                         </span>
                     </motion.div>
 
                     {/* h1 & paragraf pertama TANPA animasi opacity:
                         ini elemen LCP, harus terlihat begitu HTML tiba (skor kecepatan + SEO). */}
-                    <h1 className="font-display text-[clamp(40px,5.6vw,66px)] font-medium text-white leading-[1.1] mb-5">
-                        Jasa Perizinan <em className="italic text-[#D4AF5A]">BPOM, Halal &amp; NIB</em>
-                        <br />
-                        di Jabodetabek
+                    <h1 className="font-display text-[clamp(36px,4.8vw,60px)] font-medium text-white leading-[1.12] mb-5 [text-shadow:0_2px_20px_rgba(0,0,0,0.75)]">
+                        {/* Teks lengkap untuk Google & pembaca layar; bagian bergerak di bawah disembunyikan dari keduanya */}
+                        <span className="sr-only">Jasa Perizinan BPOM, Halal &amp; Custom Clearance di Indonesia</span>
+                        <span aria-hidden="true" className="block">
+                            Jasa Perizinan
+                            <RotatingWord />
+                            di Indonesia
+                        </span>
                     </h1>
 
-                    <p className="text-[15px] font-light text-white/70 leading-[1.8] mb-10 max-w-[460px] border-l-2 border-[#B8942A] pl-4">
-                        Perizinan tepat, bisnis bergerak. Mitra terpercaya dalam pengurusan BPOM, Halal, NIB, PIRT, Izin Edar &amp; HAKI untuk bisnis Anda.
+                    <p className="text-[16px] font-normal text-white leading-[1.8] mb-10 max-w-[560px] border-l-2 border-[#B8942A] pl-4 [text-shadow:0_2px_14px_rgba(0,0,0,0.7)]">
+                        Perizinan tepat, bisnis bergerak. Mitra terpercaya dalam pengurusan Izin Edar BPOM, Halal BPJPH, Custom Clearance, Persetujuan Import, PIRT, NIB.
                     </p>
 
                     <motion.div {...fadeUp(0.3)} className="flex gap-4 flex-wrap items-center">
@@ -88,51 +124,14 @@ export default function Hero() {
                         >
                             Konsultasi Gratis <ArrowRight size={14} strokeWidth={2.5} />
                         </a>
-                        <a
-                            href="#layanan"
-                            className="inline-flex items-center gap-2 text-[13px] text-white/60 no-underline hover:text-[#D4AF5A] transition-colors duration-200"
+                        <Link
+                            href="/layanan/"
+                            className="inline-flex items-center gap-2 text-[14px] font-medium text-white no-underline hover:text-[#D4AF5A] transition-colors duration-200 [text-shadow:0_2px_12px_rgba(0,0,0,0.7)]"
                         >
                             Lihat layanan kami <ExternalLink size={12} strokeWidth={1.5} />
-                        </a>
+                        </Link>
                     </motion.div>
                 </div>
-
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.3 }}
-                    className="flex flex-col gap-5"
-                >
-                    <div className="bg-white/5 border border-[#B8942A]/20 rounded-md p-8 text-center backdrop-blur-sm">
-                        <div className="font-display text-[clamp(48px,10vw,64px)] font-semibold text-white tracking-[12px] leading-none mb-2">
-                            EL<span className="text-[#D4AF5A]">KIA</span>
-                        </div>
-                        <div className="flex items-center gap-2 my-3">
-                            <span className="flex-1 h-px bg-[#B8942A]/30" />
-                            <span className="text-[#B8942A] text-[10px]">✦</span>
-                            <span className="flex-1 h-px bg-[#B8942A]/30" />
-                        </div>
-                        <div className="text-[10px] tracking-[0.14em] text-[#D4AF5A] uppercase">
-                            {siteConfig.tagline}
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-2 gap-2">
-                        {pills.map((p, i) => (
-                            <motion.a
-                                key={p.label}
-                                href={p.href}
-                                onClick={(e) => handlePillClick(e, p.href)}
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                transition={{ delay: 0.5 + i * 0.07 }}
-                                className="text-[11px] font-medium tracking-[0.06em] py-2 px-3 text-center bg-white/4 border border-[#B8942A]/18 rounded-sm text-white/70 no-underline hover:bg-[#B8942A]/15 hover:border-[#D4AF5A]/50 hover:text-white transition-all duration-200 cursor-pointer"
-                            >
-                                {p.label}
-                            </motion.a>
-                        ))}
-                    </div>
-                </motion.div>
             </div>
 
             <motion.div
@@ -142,12 +141,12 @@ export default function Hero() {
                 aria-hidden="true"
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
             >
-                <span className="text-[9px] tracking-[0.2em] text-white/40 uppercase">Scroll</span>
+                <span className="text-[9px] tracking-[0.2em] text-white/70 uppercase [text-shadow:0_1px_8px_rgba(0,0,0,0.7)]">Scroll</span>
                 <motion.div
                     animate={{ y: [0, 6, 0] }}
                     transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                 >
-                    <ChevronDown size={16} className="text-[#B8942A]/60" />
+                    <ChevronDown size={16} className="text-[#D4AF5A]" />
                 </motion.div>
             </motion.div>
         </section>

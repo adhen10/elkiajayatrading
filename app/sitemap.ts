@@ -1,17 +1,21 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/content";
 
-// wajib untuk output: "export"
 export const dynamic = "force-static";
 
+// /review/ belum dimasukkan selama halamannya noindex.
+const pages = [
+    { path: "/", priority: 1 },
+    { path: "/layanan/", priority: 0.9 },
+    { path: "/tentang-kami/", priority: 0.7 },
+    { path: "/kontak/", priority: 0.7 },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: siteConfig.url,
-            lastModified: new Date(),
-            changeFrequency: "monthly",
-            priority: 1,
-        },
-        // nanti tambahkan halaman layanan: `${siteConfig.url}/layanan/izin-bpom/`
-    ];
+    return pages.map((p) => ({
+        url: `${siteConfig.url}${p.path}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly",
+        priority: p.priority,
+    }));
 }
