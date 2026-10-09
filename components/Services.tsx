@@ -1,6 +1,8 @@
 "use client";
 
-import { services } from "@/data/content";
+import Link from "next/link";
+import { services, serviceHref } from "@/data/content";
+import { serviceDetails } from "@/data/serviceDetails";
 import { useReveal } from "@/hooks/useReveal";
 
 export default function Services() {
@@ -59,9 +61,18 @@ export default function Services() {
                             </p>
 
                             {/* Nanti: ganti jadi <Link href={`/layanan/${slug}/`}> ke halaman per layanan */}
-                            <div aria-hidden="true" className="mt-6 text-[16px] text-[#ECECEC] group-hover:text-[#B8942A] group-hover:translate-x-1 transition-all duration-300">
-                                →
-                            </div>
+                            {serviceDetails[s.id] ? (
+                                <Link
+                                    href={serviceHref(s)}
+                                    className="mt-6 inline-flex items-center gap-2 text-[13px] font-semibold text-[#0D1B3E] group-hover:text-[#D4AF5A] no-underline transition-colors"
+                                >
+                                    Lihat detail <span aria-hidden="true">→</span>
+                                </Link>
+                            ) : (
+                                <div aria-hidden="true" className="mt-6 text-[16px] text-[#ECECEC] group-hover:text-[#B8942A] transition-all duration-300">
+                                    →
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>

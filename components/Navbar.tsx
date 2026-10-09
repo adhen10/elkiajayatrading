@@ -5,7 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks, services, waLink } from "@/data/content";
+import { navLinks, services, waLink, serviceHref } from "@/data/content";
+import { useWaLink } from "@/hooks/useWaLink";
 
 // buang garis miring di akhir supaya "/layanan/" dan "/layanan" dianggap sama
 const normalize = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
@@ -13,10 +14,12 @@ const normalize = (p: string) => (p.length > 1 ? p.replace(/\/+$/, "") : p);
 // "Beranda" tidak ditampilkan di menu: sudah diwakili logo Elkia (logo = tautan ke "/")
 const menu = navLinks.filter((l) => l.href !== "/");
 
+
 export default function Navbar() {
     const pathname = normalize(usePathname() ?? "/");
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
+    const wa = useWaLink();
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 10);
@@ -82,7 +85,7 @@ export default function Navbar() {
                                             {services.map((s) => (
                                                 <li key={s.id}>
                                                     <Link
-                                                        href={`/layanan/#${s.id}`}
+                                                        href={serviceHref(s)}
                                                         className="block px-4 py-3 text-[14px] text-white/80 no-underline rounded hover:bg-white/5 hover:text-[#D4AF5A]"
                                                     >
                                                         {s.name}

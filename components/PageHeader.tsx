@@ -3,16 +3,22 @@ import { siteConfig } from "@/data/content";
 
 type Crumb = { label: string; href?: string };
 
+// Banner judul untuk halaman dalam. Server Component.
+// Memuat <h1> halaman, breadcrumb, dan data terstruktur BreadcrumbList untuk Google.
 export default function PageHeader({
     eyebrow,
     title,
     intro,
     crumbs,
+    icon,
+    children,
 }: {
     eyebrow: string;
     title: string;
     intro?: string;
     crumbs: Crumb[];
+    icon?: React.ReactNode;
+    children?: React.ReactNode;
 }) {
     const breadcrumbSchema = {
         "@context": "https://schema.org",
@@ -57,6 +63,12 @@ export default function PageHeader({
                     </ol>
                 </nav>
 
+                {icon && (
+                    <div className="mb-5 w-14 h-14 rounded-full border border-[#B8942A]/40 bg-[#B8942A]/10 flex items-center justify-center text-[#D4AF5A]">
+                        {icon}
+                    </div>
+                )}
+
                 <div className="inline-flex items-center gap-2 text-[11px] font-medium tracking-[0.18em] text-[#D4AF5A] uppercase mb-4">
                     <span className="block w-5 h-px bg-[#B8942A]" />
                     {eyebrow}
@@ -71,6 +83,8 @@ export default function PageHeader({
                         {intro}
                     </p>
                 )}
+
+                {children && <div className="mt-8">{children}</div>}
             </div>
         </header>
     );

@@ -3,12 +3,14 @@
 import { MessageCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { waLink } from "@/data/content";
+import { useWaLink } from "@/hooks/useWaLink";
 
 // "use client" wajib di sini karena pakai framer-motion (animasi)
 export default function FloatingWA() {
+    const href = useWaLink();
     return (
         <motion.a
-            href={waLink}
+            href={href}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Chat via WhatsApp"

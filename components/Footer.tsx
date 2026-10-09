@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AtSign, Mail, MapPin, Phone } from "lucide-react";
-import { services, navLinks, waLink, siteConfig } from "@/data/content";
+import { services, navLinks, waLink, siteConfig, serviceHref } from "@/data/content";
 
 // statis, Server Component — footer tidak butuh interaktivitas apapun
 export default function Footer() {
@@ -19,8 +19,7 @@ export default function Footer() {
             {siteConfig.tagline}
           </div>
           <p className="text-[13px] leading-[1.75] max-w-[300px]">
-            {siteConfig.name} — konsultan perizinan terpercaya di Jabodetabek untuk kebutuhan
-            BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, PIRT, Izin Edar, dan HAKI.
+            {siteConfig.name} — konsultan perizinan terpercaya di seluruh Indonesia untuk kebutuhan
           </p>
 
           <address className="mt-5 not-italic space-y-2">
@@ -61,7 +60,7 @@ export default function Footer() {
           <ul className="list-none p-0 m-0 space-y-2.5">
             {services.map((s) => (
               <li key={s.id}>
-                <Link href={`/layanan/#${s.id}`} className={link}>
+                <Link href={serviceHref(s)} className={link}>
                   {s.name}
                 </Link>
               </li>

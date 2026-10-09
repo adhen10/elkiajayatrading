@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
     title: "Kontak & Konsultasi Gratis",
     description:
-        "Hubungi PT. Elkia Jaya Trading via WhatsApp, telepon, atau email untuk konsultasi perizinan BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, izin edar, dan HAKI.",
+        "Hubungi PT. Elkia Jaya Trading via WhatsApp, telepon, atau email untuk konsultasi perizinan BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, izin edar, dan HAKI untuk pelaku usaha di seluruh Indonesia.",
     path: "/kontak/",
 });
 

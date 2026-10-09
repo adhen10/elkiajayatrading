@@ -1,3 +1,5 @@
+import { serviceDetails } from "./serviceDetails";
+
 export const siteConfig = {
     name: "PT. Elkia Jaya Trading",
     url: "https://elkiajayatrading.com",
@@ -6,7 +8,7 @@ export const siteConfig = {
     slogan: "Mitra Terpercaya dalam Pengurusan Perizinan BPOM, Halal, NIB, PIRT, Izin Edar & HAKI untuk bisnis Anda.",
     location: "Tambun Utara, Kab. Bekasi, Jawa Barat",
     address: "Suropati Residence, Jl. Raflesia II Blok F10 No. 9, Srimukti, Tambun Utara, Kab. Bekasi, Jawa Barat 17510",
-    areaServed: "Jakarta, Bogor, Depok, Tangerang, dan Bekasi",
+    areaServed: "seluruh Indonesia",
     phone: "0859 5930 3035",
     phoneWA: "6285959303035",
     phoneTel: "+6285959303035",
@@ -33,13 +35,14 @@ export const services = [
     { id: "svc-bpom", num: "04", tag: "Izin BPOM", name: "Izin BPOM", desc: "Pengurusan notifikasi dan registrasi produk kosmetik, suplemen, obat tradisional, dan pangan olahan ke Badan Pengawas Obat dan Makanan." },
     { id: "svc-izinedar", num: "05", tag: "Izin Edar", name: "Izin Edar Produk", desc: "Pengurusan izin edar untuk alat kesehatan (Kemenkes), PKRT, serta produk impor yang membutuhkan SKI BPOM agar dapat beredar resmi di pasar Indonesia." },
     { id: "svc-haki", num: "06", tag: "HAKI", name: "Hak Kekayaan Intelektual", desc: "Pendaftaran merek, hak cipta, dan paten melalui DJKI Kemenkumham untuk melindungi identitas dan inovasi bisnis Anda secara hukum." },
-    { id: "svc-import", num: "07", tag: "Persetujuan Import", name: "Persetujuan Import", desc: "Pengurusan persetujuan impor dan perizinan terkait importasi barang sesuai ketentuan yang berlaku, agar barang Anda dapat masuk ke Indonesia secara resmi." },
-    { id: "svc-customs", num: "08", tag: "Custom Clearance", name: "Custom Clearance", desc: "Pendampingan penyelesaian kepabeanan impor — mulai dari kelengkapan dokumen hingga proses pengeluaran barang melalui Bea Cukai." },
+    { id: "svc-import", num: "07", tag: "Persetujuan Import", name: "Persetujuan Import", desc: "Pengurusan Persetujuan Import (PI) dari Kementerian Perdagangan untuk barang yang diatur Lartas, lengkap dengan dukungan NIB/API, Laporan Surveyor, dan RIB." },
+    { id: "svc-customs", num: "08", tag: "Custom Clearance", name: "Custom Clearance", desc: "Pendampingan custom clearance impor dan ekspor, dari dokumen kepabeanan, bea masuk dan pajak, hingga SPPB terbit." },
+    { id: "svc-ls", num: "09", tag: "Laporan Surveyor", name: "Laporan Surveyor (LS)", desc: "Pengurusan Laporan Surveyor (LS): verifikasi teknis barang impor di negara asal sebagai syarat kepabeanan untuk barang yang diatur Lartas." },
 ];
 
 export const whyElkia = [
     { title: "Proses cepat & transparan", desc: "Setiap tahap pengajuan kami informasikan secara berkala. Tidak ada biaya tersembunyi, tidak ada waktu tunggu yang tidak pasti." },
-    { title: "Spesialis regulasi Indonesia", desc: "Tim kami memahami detail regulasi BPOM, Kemenkes, Kementan & Bea Cukai — sehingga bisnis Anda berjalan lebih cepat dan akurat." },
+    { title: "Melayani seluruh Indonesia", desc: "Kami melayani pelaku usaha dari berbagai daerah di seluruh Indonesia, serta membantu koordinasi dengan instansi pemerintah yang relevan." },
     { title: "Satu pintu, semua izin", desc: "Dari BPOM hingga HAKI, Anda tidak perlu berpindah-pindah konsultan. Elkia menangani semuanya dalam satu koordinasi." },
     { title: "Melayani Jabodetabek", desc: "Kami melayani pelaku usaha di Jakarta, Bogor, Depok, Tangerang, dan Bekasi, serta membantu koordinasi dengan instansi pemerintah yang relevan." },
 ];
@@ -52,7 +55,7 @@ export const processSteps = [
 ];
 
 export const stats = [
-    { num: "Jabodetabek", label: "Wilayah layanan" },
+    { num: "Indonesia", label: "Cakupan layanan" },
     { num: "6+", label: "Jenis perizinan ditangani" },
     { num: "24 jam", label: "Respon konsultasi" },
     { num: "Gratis", label: "Konsultasi" },
@@ -82,14 +85,20 @@ export const permitOptions = [
     { id: "kosmetik", label: "Kosmetik / skincare", permits: ["NIB & Izin Usaha", "Izin BPOM (notifikasi kosmetik)", "Sertifikasi Halal"] },
     { id: "suplemen", label: "Suplemen / obat tradisional", permits: ["NIB & Izin Usaha", "Izin BPOM", "Sertifikasi Halal"] },
     { id: "alkes", label: "Alat kesehatan / PKRT", permits: ["NIB & Izin Usaha", "Izin Edar Produk"] },
-    { id: "impor", label: "Impor barang / produk", permits: ["NIB & Izin Usaha", "Persetujuan Import", "Custom Clearance", "Izin Edar Produk (untuk produk tertentu)"] },
+    { id: "impor", label: "Impor barang / produk", permits: ["NIB & Izin Usaha", "Persetujuan Import (untuk barang Lartas)", "Laporan Surveyor (untuk barang tertentu)", "Custom Clearance", "Izin Edar Produk (untuk produk tertentu)"] },
     { id: "merek", label: "Merek, logo, atau karya", permits: ["Hak Kekayaan Intelektual (merek / hak cipta / paten)"] },
 ];
 
 /* ───────── Beranda: kartu "Layanan yang kami tawarkan" ─────────
    Alamat halaman layanan dipusatkan di sini. Saat halaman per layanan sudah ada,
    cukup ubah isi serviceHref (mis. `/layanan/${slug}/`), semua tautan ikut berubah. */
-export const serviceHref = (s: { id: string }) => `/layanan/#${s.id}`;
+export const serviceHref = (s: { id: string }) => {
+    const d = serviceDetails[s.id];
+    return d ? `/layanan/${d.slug}/` : `/layanan/#${s.id}`;
+};
+
+export const waLinkFor = (text: string) =>
+    `https://wa.me/${siteConfig.phoneWA}?text=${encodeURIComponent(text)}`;
 
 // Layanan yang tampil lebih dulu di beranda (sisanya muncul setelah "Tampilkan semua")
 export const featuredServiceIds = ["svc-bpom", "svc-halal", "svc-customs", "svc-import"];
@@ -98,10 +107,23 @@ export const featuredServiceIds = ["svc-bpom", "svc-halal", "svc-customs", "svc-
 export const serviceHighlights: Record<string, string[]> = {
     "svc-bpom": ["Notifikasi produk kosmetik", "Registrasi pangan olahan", "Suplemen & obat tradisional"],
     "svc-halal": ["Pendampingan audit jaminan halal", "Pengajuan ke BPJPH", "Terbitnya sertifikat halal resmi"],
-    "svc-customs": ["Pengecekan kelengkapan dokumen", "Pengurusan proses di Bea Cukai", "Koordinasi pengeluaran barang"],
-    "svc-import": ["Pengecekan jenis izin impor", "Penyiapan dokumen pengajuan", "Pemantauan proses persetujuan"],
+    "svc-customs": ["Pemeriksaan dan penyiapan dokumen", "Perhitungan bea masuk dan pajak", "Pendampingan hingga SPPB terbit"],
+    "svc-import": ["Pengecekan kebutuhan PI (Lartas)", "Penyiapan NIB/API, LS, dan RIB", "Pengajuan melalui INSW"],
+    "svc-ls": ["Verifikasi teknis barang di negara asal", "Kesesuaian spesifikasi dan HS Code", "Dokumen LS untuk kebutuhan kepabeanan"],
     "svc-nib": ["Pembuatan NIB melalui OSS", "Sertifikat Standar", "Penentuan bidang usaha (KBLI)"],
     "svc-pirt": ["Pengajuan melalui Dinas Kesehatan", "Penyiapan dokumen produk", "Pendampingan hingga izin terbit"],
     "svc-izinedar": ["Izin edar alat kesehatan (Kemenkes)", "Izin edar PKRT", "SKI BPOM untuk produk impor tertentu"],
     "svc-haki": ["Pendaftaran merek", "Hak cipta", "Paten"],
 };
+
+export function waLinkForPath(pathname: string | null): string {
+    if (!pathname) return waLink;
+    const m = pathname.match(/^\/layanan\/([^/]+)\/?$/);
+    if (!m) return waLink;
+    const id = Object.keys(serviceDetails).find(
+        (k) => serviceDetails[k as keyof typeof serviceDetails].slug === m[1]
+    );
+    const svc = services.find((s) => s.id === id);
+    if (!svc) return waLink;
+    return waLinkFor(`Halo Elkia, saya ingin konsultasi mengenai ${svc.name}.`);
+}

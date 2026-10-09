@@ -23,7 +23,7 @@ const inter = Inter({
   display: "swap",
 });
 
-const title = "Jasa Perizinan BPOM, Halal & Custom Clearance | Jabodetabek";
+const title = "Jasa Perizinan BPOM, Halal & Custom Clearance | Seluruh Indonesia";
 
 export const metadata: Metadata = {
   title: {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Elkia",
   },
   description:
-    "PT. Elkia Jaya Trading — konsultan Izin Edar BPOM, Halal BPJPH, Custom Clearance, Persetujuan Import, PIRT, NIB & HAKI. Melayani Jakarta, Bekasi, Tangerang, Depok & Bogor. Konsultasi gratis.",
+    "PT. Elkia Jaya Trading — konsultan Izin Edar BPOM, Halal BPJPH, Custom Clearance, Persetujuan Import, PIRT, NIB & HAKI. Melayani pelaku usaha di seluruh Indonesia. Konsultasi gratis.",
   metadataBase: new URL(siteConfig.url),
   openGraph: {
     type: "website",
@@ -40,20 +40,20 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     title,
     description:
-      "Konsultan Izin Edar BPOM, Halal BPJPH, Custom Clearance, Persetujuan Import, PIRT, NIB & HAKI. Melayani Jakarta, Bekasi, Tangerang, Depok & Bogor. Konsultasi gratis.",
+      "Konsultan Izin Edar BPOM, Halal BPJPH, Custom Clearance, Persetujuan Import, PIRT, NIB & HAKI. Melayani pelaku usaha di seluruh Indonesia. Konsultasi gratis.",
     images: [
       {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "PT. Elkia Jaya Trading – Konsultan Perizinan Jabodetabek",
+        alt: "PT. Elkia Jaya Trading – Konsultan Perizinan Indonesia",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title,
-    description: "Konsultan perizinan BPOM, Halal & Custom Clearance di Jabodetabek. Konsultasi gratis.",
+    description: "Konsultan perizinan BPOM, Halal & Custom Clearance untuk seluruh Indonesia. Konsultasi gratis.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -75,16 +75,13 @@ const schema = {
   "@id": `${siteConfig.url}/#business`,
   name: siteConfig.name,
   description:
-    "Konsultan perizinan di Jabodetabek untuk kebutuhan BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, PIRT, Izin Edar, dan HAKI.",
+    "Konsultan perizinan untuk pelaku usaha di seluruh Indonesia: BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, PIRT, Izin Edar, dan HAKI.",
   url: siteConfig.url,
   logo: `${siteConfig.url}/images/logo.png`,
   image: `${siteConfig.url}/images/og-image.jpg`,
   telephone: siteConfig.phoneTel,
   email: siteConfig.email,
-  areaServed: ["Jakarta", "Bogor", "Depok", "Tangerang", "Bekasi"].map((name) => ({
-    "@type": "City",
-    name,
-  })),
+  areaServed: { "@type": "Country", name: "Indonesia" },
   address: {
     "@type": "PostalAddress",
     streetAddress: "Suropati Residence, Jl. Raflesia II Blok F10 No. 9, Srimukti",

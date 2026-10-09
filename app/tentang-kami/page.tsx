@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
     title: "Tentang Kami – PT. Elkia Jaya Trading",
     description:
-        "PT. Elkia Jaya Trading adalah konsultan perizinan yang mendampingi pelaku usaha di Jakarta, Bogor, Depok, Tangerang & Bekasi mengurus BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, PIRT, izin edar, dan HAKI.",
+        "PT. Elkia Jaya Trading adalah konsultan perizinan yang mendampingi pelaku usaha di seluruh Indonesia mengurus BPOM, Halal, Custom Clearance, Persetujuan Import, NIB, PIRT, izin edar, dan HAKI.",
     path: "/tentang-kami/",
 });
 

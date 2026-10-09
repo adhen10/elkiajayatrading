@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
     title: "Layanan Perizinan BPOM, Halal, Import & Custom Clearance",
     description:
-        "Layanan konsultan perizinan PT. Elkia Jaya Trading: BPOM, sertifikasi Halal, Persetujuan Import, Custom Clearance, NIB & OSS, PIRT, izin edar, dan HAKI untuk pelaku usaha di Jakarta, Bekasi, Tangerang, Depok & Bogor.",
+        "Layanan konsultan perizinan PT. Elkia Jaya Trading: BPOM, sertifikasi Halal, Persetujuan Import, Custom Clearance, NIB & OSS, PIRT, izin edar, dan HAKI untuk pelaku usaha di seluruh Indonesia.",
     path: "/layanan/",
 });
 
