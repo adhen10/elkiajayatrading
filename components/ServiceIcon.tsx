@@ -1,7 +1,9 @@
 import {
     Ship, ClipboardCheck, FileCheck2, FileText, Calculator, ScanSearch, BadgeCheck, Globe,
     FlaskConical, ShieldCheck, Factory, FileSearch, ListChecks, CalendarClock, Zap, Wallet,
-    SlidersHorizontal, Handshake, type LucideIcon,
+    SlidersHorizontal, Handshake, MessagesSquare, ClipboardList, SearchCheck, Route,
+    PackageCheck, Tag, Package, Sparkles, Pill, PackageSearch, HeartPulse, SprayCan,
+    Copyright, Lightbulb, MapPin, type LucideIcon,
 } from "lucide-react";
 
 // Daftar ikon yang boleh dipakai di data/serviceDetails.ts (hanya yang dipakai yang ikut terkemas)
@@ -24,6 +26,21 @@ const icons: Record<string, LucideIcon> = {
     wallet: Wallet,
     sliders: SlidersHorizontal,
     handshake: Handshake,
+    "messages-square": MessagesSquare,
+    "clipboard-list": ClipboardList,
+    "search-check": SearchCheck,
+    route: Route,
+    "package-check": PackageCheck,
+    tag: Tag,
+    package: Package,
+    sparkles: Sparkles,
+    pill: Pill,
+    "package-search": PackageSearch,
+    "heart-pulse": HeartPulse,
+    "spray-can": SprayCan,
+    copyright: Copyright,
+    lightbulb: Lightbulb,
+    "map-pin": MapPin,
 };
 
 // Ikon dekoratif: disembunyikan dari pembaca layar

@@ -268,4 +268,370 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         related: ["svc-ls", "svc-customs"],
         updated: "Oktober 2026",
     },
+
+    "svc-nib": {
+        slug: "nib-izin-usaha",
+        icon: "file-check",
+        metaTitle: "Jasa Pengurusan NIB & Legalitas Usaha melalui OSS",
+        metaDescription: "Pendampingan pengurusan NIB dan perizinan usaha melalui OSS, termasuk penyesuaian KBLI serta pengecekan Sertifikat Standar sesuai kegiatan usaha.",
+        h1: "Jasa Pengurusan NIB & Izin Usaha",
+        intro: "Mulai usaha dengan dasar legalitas yang sesuai. Elkia membantu meninjau data usaha, menentukan kebutuhan perizinan, dan mendampingi proses melalui sistem OSS.",
+        facts: [{ label: "Sistem", value: "OSS Berbasis Risiko" }],
+        about: {
+            heading: "Apa itu NIB dan perizinan usaha?",
+            paragraphs: [
+                "Nomor Induk Berusaha (NIB) merupakan identitas pelaku usaha yang diterbitkan melalui sistem Online Single Submission (OSS). NIB menjadi salah satu dasar penting dalam proses perizinan berusaha di Indonesia.",
+                "Jenis izin lanjutan bergantung pada kegiatan usaha, tingkat risiko, lokasi, dan ketentuan yang berlaku. Karena itu, data usaha dan Klasifikasi Baku Lapangan Usaha Indonesia (KBLI) perlu ditinjau dengan cermat sebelum pengajuan."
+            ]
+        },
+        steps: {
+            heading: "Tahapan pengurusan NIB",
+            intro: "Kami membantu memetakan kebutuhan dan mendampingi persiapan pengajuan.",
+            items: [
+                { icon: "messages-square", title: "Konsultasi usaha", desc: "Mengenali bentuk usaha, kegiatan utama, lokasi, dan kebutuhan legalitas yang ingin dipenuhi." },
+                { icon: "clipboard-list", title: "Pemeriksaan data dan KBLI", desc: "Meninjau data pelaku usaha serta kecocokan KBLI dengan kegiatan yang benar-benar dijalankan." },
+                { icon: "file-check", title: "Pengajuan melalui OSS", desc: "Mendampingi pengisian data dan proses penerbitan NIB serta perizinan lanjutan yang dipersyaratkan." },
+                { icon: "badge-check", title: "Pemeriksaan hasil", desc: "Memeriksa dokumen yang terbit dan menjelaskan langkah berikutnya jika ada kewajiban tambahan." }
+            ]
+        },
+        sections: [
+            {
+                heading: "Hal yang perlu diperiksa",
+                items: [
+                    { icon: "list-checks", title: "Kesesuaian KBLI", desc: "Kode bidang usaha harus menggambarkan kegiatan yang dijalankan dan dapat memengaruhi perizinan yang dibutuhkan." },
+                    { icon: "shield-check", title: "Tingkat risiko usaha", desc: "Kegiatan dengan tingkat risiko berbeda dapat memerlukan persyaratan seperti Sertifikat Standar atau izin tambahan." },
+                    { icon: "map-pin", title: "Lokasi dan data usaha", desc: "Alamat, skala usaha, serta informasi pendukung perlu sesuai dengan kondisi dan dokumen usaha." }
+                ]
+            }
+        ],
+        checklist: {
+            heading: "Data yang umumnya diperlukan",
+            intro: "Daftar akhir bergantung pada bentuk usaha dan kegiatan yang didaftarkan.",
+            items: [
+                "Data identitas pemilik atau penanggung jawab",
+                "Nama, alamat, dan kontak usaha",
+                "Informasi kegiatan usaha yang dijalankan",
+                "Pilihan KBLI yang sesuai dengan kegiatan usaha",
+                "Data pendukung perusahaan atau badan usaha, jika relevan"
+            ]
+        },
+        whyUs: [
+            { icon: "messages-square", text: "Pendampingan sesuai kebutuhan usaha" },
+            { icon: "clipboard-check", text: "Pemeriksaan data sebelum pengajuan" },
+            { icon: "route", text: "Penjelasan langkah legalitas berikutnya" }
+        ],
+        faqs: [
+            { q: "Apakah semua usaha membutuhkan NIB?", a: "NIB merupakan identitas pelaku usaha dalam sistem OSS. Kewajiban dan tahapan perizinan yang perlu dipenuhi mengikuti bentuk usaha, kegiatan, serta ketentuan yang berlaku." },
+            { q: "Apakah NIB sudah cukup untuk menjalankan semua usaha?", a: "Belum tentu. Berdasarkan kegiatan dan tingkat risikonya, usaha dapat memerlukan Sertifikat Standar, izin, atau persyaratan tambahan." },
+            { q: "Apa itu KBLI?", a: "KBLI adalah klasifikasi kegiatan ekonomi yang digunakan untuk mengidentifikasi bidang usaha. Pemilihannya perlu sesuai dengan aktivitas usaha yang sebenarnya." },
+            { q: "Bisakah Elkia membantu mengecek izin yang dibutuhkan?", a: "Ya. Kami dapat membantu meninjau informasi awal usaha dan memetakan kebutuhan perizinan untuk dikonfirmasi berdasarkan ketentuan yang berlaku." }
+        ],
+        related: ["svc-pirt", "svc-halal", "svc-bpom"],
+        updated: "Oktober 2026"
+    },
+
+    "svc-pirt": {
+        slug: "izin-pirt",
+        icon: "clipboard-check",
+        metaTitle: "Jasa Pengurusan Izin PIRT untuk Produk Pangan",
+        metaDescription: "Pendampingan pengurusan SPP-IRT untuk produk pangan olahan yang memenuhi kriteria, termasuk pengecekan kelengkapan data dan persyaratan.",
+        h1: "Jasa Pengurusan Izin PIRT",
+        intro: "Pelaku usaha pangan rumahan perlu memastikan produknya memenuhi persyaratan keamanan pangan dan perizinan yang sesuai. Elkia membantu meninjau kebutuhan serta mendampingi persiapan pengajuan.",
+        facts: [{ label: "Untuk", value: "Pangan olahan yang memenuhi kriteria SPP-IRT" }],
+        about: {
+            heading: "Apa itu PIRT?",
+            paragraphs: [
+                "Istilah PIRT umum digunakan untuk perizinan pangan industri rumah tangga. Dalam sistem perizinan pangan, Sertifikat Produksi Pangan Industri Rumah Tangga (SPP-IRT) ditujukan bagi jenis pangan olahan tertentu yang memenuhi kriteria yang ditetapkan.",
+                "Tidak semua produk pangan dapat menggunakan jalur SPP-IRT. Jenis produk, cara pengolahan, masa simpan, kemasan, dan ketentuan instansi berwenang perlu diperiksa untuk menentukan apakah jalur ini sesuai atau produk perlu didaftarkan melalui BPOM."
+            ]
+        },
+        steps: {
+            heading: "Tahapan pendampingan PIRT",
+            intro: "Kebutuhan setiap produk akan ditinjau sebelum proses pengajuan.",
+            items: [
+                { icon: "messages-square", title: "Identifikasi produk", desc: "Mendata jenis pangan, proses produksi, kemasan, dan informasi label yang tersedia." },
+                { icon: "search-check", title: "Pemeriksaan jalur izin", desc: "Meninjau apakah produk termasuk kategori yang dapat mengajukan SPP-IRT atau perlu jalur perizinan lain." },
+                { icon: "clipboard-list", title: "Persiapan persyaratan", desc: "Membantu menyusun data dan dokumen pendukung serta mengidentifikasi pelatihan atau komitmen yang mungkin diwajibkan." },
+                { icon: "file-check", title: "Pendampingan pengajuan", desc: "Mendampingi proses sesuai mekanisme instansi berwenang dan membantu meninjau hasil pengajuan." }
+            ]
+        },
+        sections: [
+            {
+                heading: "Hal penting sebelum mengajukan",
+                items: [
+                    { icon: "package-check", title: "Kategori produk", desc: "Pastikan jenis pangan dan proses produksinya sesuai dengan kriteria jalur SPP-IRT." },
+                    { icon: "tag", title: "Label dan informasi produk", desc: "Nama produk, komposisi, berat bersih, produsen, dan informasi lain perlu ditinjau sesuai ketentuan yang berlaku." },
+                    { icon: "shield-check", title: "Keamanan pangan", desc: "Pelaku usaha perlu memahami persyaratan higiene, sanitasi, dan komitmen keamanan pangan yang relevan." }
+                ]
+            }
+        ],
+        checklist: {
+            heading: "Data yang umumnya diperlukan",
+            intro: "Persyaratan akhir mengikuti jenis produk dan mekanisme pengajuan di daerah masing-masing.",
+            items: [
+                "Identitas pemilik atau penanggung jawab usaha",
+                "NIB dan data usaha yang relevan",
+                "Informasi jenis, komposisi, dan proses produksi pangan",
+                "Rancangan label atau kemasan produk",
+                "Data lokasi produksi dan dokumen pendukung yang dipersyaratkan"
+            ]
+        },
+        whyUs: [
+            { icon: "search-check", text: "Pengecekan awal kategori produk" },
+            { icon: "clipboard-list", text: "Pendampingan persiapan dokumen" },
+            { icon: "messages-square", text: "Penjelasan jalur izin yang sesuai" }
+        ],
+        faqs: [
+            { q: "Apakah semua makanan rumahan bisa mendapatkan PIRT?", a: "Tidak. SPP-IRT hanya berlaku untuk jenis pangan olahan yang memenuhi kriteria. Kategori produk dan cara produksinya perlu diperiksa terlebih dahulu." },
+            { q: "Apakah produk yang tidak memenuhi kriteria PIRT bisa didaftarkan ke BPOM?", a: "Sebagian produk memang perlu mengikuti jalur perizinan BPOM atau ketentuan lain yang berlaku. Penentuan jalurnya bergantung pada karakteristik produk." },
+            { q: "Apakah label produk perlu disiapkan?", a: "Informasi label merupakan bagian penting yang perlu ditinjau. Rincian yang wajib dicantumkan bergantung pada jenis pangan dan aturan yang berlaku." },
+            { q: "Berapa lama pengurusan PIRT?", a: "Waktu proses bergantung pada kelengkapan data, pemenuhan persyaratan, dan proses instansi berwenang. Estimasi lebih tepat diberikan setelah produk ditinjau." }
+        ],
+        related: ["svc-nib", "svc-halal", "svc-bpom"],
+        updated: "Oktober 2026"
+    },
+
+    "svc-halal": {
+        slug: "sertifikasi-halal",
+        icon: "shield-check",
+        metaTitle: "Jasa Pendampingan Sertifikasi Halal",
+        metaDescription: "Pendampingan persiapan sertifikasi halal: peninjauan bahan, proses produk halal, dokumen pendukung, dan pengajuan sesuai jalur yang berlaku.",
+        h1: "Jasa Pendampingan Sertifikasi Halal",
+        intro: "Persiapan sertifikasi halal membutuhkan data bahan dan proses yang tertata. Elkia mendampingi pelaku usaha meninjau kebutuhan dokumen dan memahami tahapan pengajuan sesuai kategori produknya.",
+        facts: [{ label: "Fokus", value: "Bahan dan proses produk halal" }],
+        about: {
+            heading: "Apa itu sertifikasi halal?",
+            paragraphs: [
+                "Sertifikat halal merupakan pengakuan resmi bahwa suatu produk telah memenuhi ketentuan kehalalan sesuai proses pemeriksaan dan penetapan yang berlaku. Di Indonesia, penyelenggaraan sertifikasi halal melibatkan BPJPH serta pihak pemeriksa dan penetapan halal sesuai jalur yang digunakan.",
+                "Persyaratan dan jalur pengajuan dapat berbeda menurut jenis produk, skala usaha, bahan, serta proses produksinya. Pendampingan membantu pelaku usaha menyiapkan informasi dengan lebih rapi, tetapi penerbitan sertifikat tetap mengikuti evaluasi pihak berwenang."
+            ]
+        },
+        steps: {
+            heading: "Tahapan pendampingan sertifikasi halal",
+            intro: "Tahap awal berfokus pada pemetaan produk, bahan, dan proses usaha.",
+            items: [
+                { icon: "messages-square", title: "Konsultasi dan pemetaan", desc: "Mengidentifikasi produk, skala usaha, bahan, pemasok, dan proses produksi." },
+                { icon: "clipboard-list", title: "Pemeriksaan bahan dan dokumen", desc: "Menyusun daftar bahan, bukti pendukung, serta informasi proses produk halal yang diperlukan." },
+                { icon: "file-check", title: "Persiapan pengajuan", desc: "Mendampingi persiapan data dan pengajuan melalui jalur yang sesuai, termasuk memeriksa apakah skema pernyataan pelaku usaha dapat digunakan." },
+                { icon: "badge-check", title: "Tindak lanjut pemeriksaan", desc: "Membantu menindaklanjuti permintaan perbaikan atau informasi tambahan hingga proses selesai sesuai keputusan pihak berwenang." }
+            ]
+        },
+        sections: [
+            {
+                heading: "Komponen penting dalam persiapan",
+                items: [
+                    { icon: "flask-conical", title: "Bahan dan pemasok", desc: "Data bahan baku, bahan tambahan, serta dokumen pendukungnya perlu dicatat dan ditinjau." },
+                    { icon: "factory", title: "Proses produksi", desc: "Alur penerimaan, penyimpanan, pengolahan, dan penanganan produk perlu dijelaskan sesuai kondisi nyata." },
+                    { icon: "file-text", title: "Dokumen usaha dan produk", desc: "Informasi pelaku usaha, daftar produk, serta dokumen lain disiapkan berdasarkan skema yang berlaku." }
+                ]
+            }
+        ],
+        checklist: {
+            heading: "Data awal yang perlu disiapkan",
+            intro: "Dokumen final ditentukan setelah kategori usaha dan jalur sertifikasi diperiksa.",
+            items: [
+                "Data pelaku usaha dan NIB",
+                "Daftar produk yang akan diajukan",
+                "Daftar bahan baku dan bahan tambahan",
+                "Informasi pemasok serta dokumen pendukung bahan yang tersedia",
+                "Ringkasan proses produksi dan fasilitas yang digunakan"
+            ]
+        },
+        whyUs: [
+            { icon: "clipboard-check", text: "Bantuan merapikan dokumen awal" },
+            { icon: "messages-square", text: "Penjelasan pilihan jalur pengajuan" },
+            { icon: "route", text: "Pendampingan tindak lanjut proses" }
+        ],
+        faqs: [
+            { q: "Apakah semua usaha dapat menggunakan jalur self-declare?", a: "Tidak. Skema pernyataan pelaku usaha hanya dapat digunakan apabila usaha dan produknya memenuhi kriteria serta persyaratan yang berlaku. Kelayakan perlu diperiksa terlebih dahulu." },
+            { q: "Apakah sertifikat halal pasti terbit setelah mengajukan?", a: "Tidak otomatis. Penerbitan mengikuti pemeriksaan, pemenuhan persyaratan, dan keputusan pihak berwenang sesuai jalur sertifikasi." },
+            { q: "Apakah daftar bahan perlu disiapkan?", a: "Ya, informasi bahan dan dokumen pendukungnya merupakan bagian penting dalam penilaian. Kebutuhan rinci bergantung pada produk dan bahan yang digunakan." },
+            { q: "Berapa lama proses sertifikasi halal?", a: "Waktunya bergantung pada jalur pengajuan, kelengkapan dokumen, proses pemeriksaan, dan tindak lanjut yang diperlukan. Estimasi diberikan setelah peninjauan awal." }
+        ],
+        related: ["svc-nib", "svc-pirt", "svc-bpom"],
+        updated: "Oktober 2026"
+    },
+
+    "svc-bpom": {
+        slug: "izin-bpom",
+        icon: "shield-check",
+        metaTitle: "Jasa Pengurusan Izin BPOM untuk Produk",
+        metaDescription: "Pendampingan registrasi produk ke BPOM sesuai kategori, termasuk peninjauan data produk, komposisi, label, dan dokumen pendukung.",
+        h1: "Jasa Pengurusan Izin BPOM",
+        intro: "Produk pangan olahan, kosmetik, suplemen, dan obat tradisional memiliki jalur registrasi serta persyaratan yang berbeda. Elkia membantu memetakan jalur yang sesuai dan mendampingi persiapan pengajuan.",
+        facts: [{ label: "Untuk", value: "Produk yang wajib terdaftar di BPOM" }],
+        about: {
+            heading: "Kapan produk membutuhkan izin BPOM?",
+            paragraphs: [
+                "BPOM mengawasi berbagai kategori produk, termasuk pangan olahan tertentu, kosmetik, obat tradisional, dan suplemen kesehatan. Bentuk persetujuan atau registrasi yang diperlukan tidak sama untuk setiap kategori.",
+                "Kebutuhan izin ditentukan oleh jenis produk, komposisi, klaim, bentuk sediaan, proses produksi, dan status produk dalam negeri atau impor. Peninjauan awal membantu menentukan jalur registrasi serta dokumen teknis yang perlu disiapkan."
+            ]
+        },
+        steps: {
+            heading: "Tahapan pendampingan registrasi BPOM",
+            intro: "Alur dan persyaratan rinci akan disesuaikan dengan kategori produk.",
+            items: [
+                { icon: "search-check", title: "Identifikasi kategori produk", desc: "Meninjau jenis, komposisi, bentuk produk, klaim, produsen, dan status produk." },
+                { icon: "clipboard-list", title: "Audit data dan dokumen", desc: "Memeriksa data perusahaan, formula atau komposisi, spesifikasi, label, dan dokumen pendukung yang tersedia." },
+                { icon: "file-check", title: "Persiapan pengajuan", desc: "Mendampingi penyusunan data untuk jalur registrasi yang relevan dan proses pengajuan sesuai ketentuan." },
+                { icon: "messages-square", title: "Tindak lanjut evaluasi", desc: "Membantu mengorganisasi tanggapan atau perbaikan data apabila diminta selama evaluasi." }
+            ]
+        },
+        sections: [
+            {
+                heading: "Kategori produk yang dapat ditinjau",
+                items: [
+                    { icon: "package", title: "Pangan olahan", desc: "Menentukan apakah produk memerlukan registrasi BPOM atau dapat mengikuti jalur perizinan pangan lain berdasarkan kriterianya." },
+                    { icon: "sparkles", title: "Kosmetik", desc: "Meninjau kebutuhan notifikasi kosmetik, data produk, penanggung jawab, dan informasi label." },
+                    { icon: "pill", title: "Suplemen dan obat tradisional", desc: "Memetakan persyaratan registrasi berdasarkan kategori, komposisi, klaim, dan bentuk produk." }
+                ]
+            }
+        ],
+        checklist: {
+            heading: "Dokumen awal yang umumnya ditinjau",
+            intro: "Daftar pasti tidak sama untuk setiap kategori dan jalur registrasi.",
+            items: [
+                "Data perusahaan dan legalitas usaha yang relevan",
+                "Identitas produsen serta status produk dalam negeri atau impor",
+                "Komposisi, spesifikasi, dan informasi teknis produk",
+                "Rancangan label serta klaim yang digunakan",
+                "Dokumen pendukung lain sesuai kategori produk"
+            ]
+        },
+        whyUs: [
+            { icon: "search-check", text: "Pemetaan jalur berdasarkan kategori produk" },
+            { icon: "clipboard-check", text: "Pemeriksaan kelengkapan data awal" },
+            { icon: "messages-square", text: "Pendampingan tindak lanjut evaluasi" }
+        ],
+        faqs: [
+            { q: "Apakah semua produk pangan wajib terdaftar di BPOM?", a: "Tidak selalu melalui jalur yang sama. Sebagian produk dapat masuk kategori SPP-IRT jika memenuhi kriteria, sedangkan produk lain memerlukan registrasi BPOM atau izin yang relevan." },
+            { q: "Apakah izin BPOM sama untuk kosmetik dan pangan?", a: "Tidak. Kategori produk memiliki mekanisme, data teknis, dan persyaratan yang berbeda. Jalur harus ditentukan berdasarkan karakteristik produk." },
+            { q: "Berapa lama registrasi BPOM?", a: "Durasi bergantung pada kategori produk, jenis pengajuan, kelengkapan dokumen, dan evaluasi. Estimasi sebaiknya diberikan setelah data produk ditinjau." },
+            { q: "Apakah label dan klaim produk ikut diperiksa?", a: "Informasi label dan klaim merupakan bagian yang perlu ditinjau karena harus sesuai dengan kategori dan ketentuan yang berlaku." }
+        ],
+        related: ["svc-pirt", "svc-halal", "svc-izinedar"],
+        updated: "Oktober 2026"
+    },
+
+    "svc-izinedar": {
+        slug: "izin-edar-produk",
+        icon: "badge-check",
+        metaTitle: "Jasa Pengurusan Izin Edar Produk",
+        metaDescription: "Pendampingan identifikasi dan persiapan izin edar produk seperti alat kesehatan, PKRT, serta dokumen impor terkait sesuai kewenangan instansi.",
+        h1: "Jasa Pengurusan Izin Edar Produk",
+        intro: "Sebelum dipasarkan, produk tertentu perlu memenuhi persyaratan izin edar dari instansi yang berwenang. Elkia membantu meninjau kategori produk dan memetakan jalur serta dokumen yang relevan.",
+        facts: [{ label: "Fokus", value: "Identifikasi jalur izin edar" }],
+        about: {
+            heading: "Apa yang dimaksud izin edar produk?",
+            paragraphs: [
+                "Izin edar adalah persetujuan atau registrasi yang diwajibkan bagi kategori produk tertentu sebelum dapat diedarkan. Instansi dan jenis dokumennya bergantung pada kategori produk, misalnya alat kesehatan dan PKRT yang berada dalam ranah Kementerian Kesehatan, atau produk tertentu yang terkait dengan BPOM.",
+                "Produk impor juga dapat membutuhkan dokumen tambahan, seperti persetujuan impor atau surat keterangan impor sesuai kategori dan ketentuan yang berlaku. Karena itu, identifikasi kategori produk menjadi langkah awal yang penting."
+            ]
+        },
+        steps: {
+            heading: "Tahapan pendampingan izin edar",
+            intro: "Proses disusun berdasarkan kategori dan status produk.",
+            items: [
+                { icon: "package-search", title: "Identifikasi produk", desc: "Meninjau fungsi, penggunaan, spesifikasi, produsen, dan status produk dalam negeri atau impor." },
+                { icon: "route", title: "Pemetaan instansi dan jalur", desc: "Menentukan instansi dan jenis perizinan yang relevan berdasarkan kategori produk." },
+                { icon: "clipboard-list", title: "Persiapan dokumen", desc: "Membantu memeriksa data teknis, dokumen produsen, label, dan dokumen legalitas yang dipersyaratkan." },
+                { icon: "file-check", title: "Pengajuan dan tindak lanjut", desc: "Mendampingi persiapan pengajuan dan pengorganisasian tindak lanjut jika terdapat permintaan tambahan." }
+            ]
+        },
+        sections: [
+            {
+                heading: "Kategori yang perlu ditinjau",
+                items: [
+                    { icon: "heart-pulse", title: "Alat kesehatan", desc: "Kebutuhan izin ditentukan oleh klasifikasi, tujuan penggunaan, produsen, dan status produk." },
+                    { icon: "spray-can", title: "PKRT", desc: "Produk Perbekalan Kesehatan Rumah Tangga perlu diperiksa berdasarkan jenis dan penggunaan yang dimaksud." },
+                    { icon: "ship", title: "Produk impor tertentu", desc: "Produk impor dapat memerlukan dokumen tambahan, termasuk dokumen impor atau persyaratan dari instansi pengawas terkait." }
+                ]
+            }
+        ],
+        checklist: {
+            heading: "Informasi awal yang perlu disiapkan",
+            intro: "Persyaratan final akan disesuaikan dengan klasifikasi dan jalur perizinan produk.",
+            items: [
+                "Nama produk, fungsi, dan tujuan penggunaan",
+                "Identitas produsen dan negara asal, jika produk impor",
+                "Spesifikasi teknis, katalog, atau petunjuk penggunaan",
+                "Label dan dokumen pendukung produk",
+                "Data importir atau distributor serta legalitas usaha yang relevan"
+            ]
+        },
+        whyUs: [
+            { icon: "route", text: "Pemetaan jalur izin sesuai kategori" },
+            { icon: "clipboard-check", text: "Pemeriksaan dokumen awal" },
+            { icon: "messages-square", text: "Pendampingan proses secara terkoordinasi" }
+        ],
+        faqs: [
+            { q: "Apakah semua produk memerlukan izin edar?", a: "Tidak semua produk mengikuti kewajiban yang sama. Kebutuhan izin ditentukan oleh kategori, tujuan penggunaan, dan peraturan yang berlaku." },
+            { q: "Apakah izin edar alat kesehatan sama dengan izin PKRT?", a: "Tidak. Keduanya memiliki klasifikasi dan persyaratan yang berbeda sehingga perlu diidentifikasi terlebih dahulu." },
+            { q: "Apa itu SKI BPOM?", a: "SKI merupakan dokumen keterangan impor BPOM untuk kategori produk yang berada dalam kewenangannya dan memenuhi ketentuan terkait. Kebutuhannya bergantung pada kategori serta status produk." },
+            { q: "Bisakah pengurusan dimulai sebelum semua dokumen lengkap?", a: "Konsultasi dan pemetaan kebutuhan dapat dimulai dengan informasi awal. Pengajuan resmi baru dapat dipersiapkan setelah persyaratan yang diwajibkan dipenuhi." }
+        ],
+        related: ["svc-bpom", "svc-import", "svc-customs"],
+        updated: "Oktober 2026"
+    },
+
+    "svc-haki": {
+        slug: "hak-kekayaan-intelektual",
+        icon: "copyright",
+        metaTitle: "Jasa Pendampingan Hak Kekayaan Intelektual (HAKI)",
+        metaDescription: "Pendampingan pendaftaran merek dan pemetaan kebutuhan hak cipta atau paten, termasuk pemeriksaan awal informasi dan dokumen pendukung.",
+        h1: "Jasa Pendampingan Hak Kekayaan Intelektual",
+        intro: "Merek, karya, dan invensi memiliki bentuk perlindungan yang berbeda. Elkia membantu mengidentifikasi kebutuhan awal dan mendampingi persiapan dokumen untuk jalur kekayaan intelektual yang sesuai.",
+        facts: [{ label: "Fokus", value: "Merek, hak cipta, dan paten" }],
+        about: {
+            heading: "Apa itu Hak Kekayaan Intelektual?",
+            paragraphs: [
+                "Hak Kekayaan Intelektual (HKI atau HAKI) mencakup beberapa jenis perlindungan hukum, antara lain merek untuk membedakan barang atau jasa, hak cipta untuk karya yang dilindungi, serta paten untuk invensi yang memenuhi persyaratan.",
+                "Setiap jenis perlindungan memiliki kriteria, prosedur, dan dokumen yang berbeda. Peninjauan awal membantu menentukan jenis permohonan yang relevan dan mengurangi risiko memilih jalur yang tidak sesuai."
+            ]
+        },
+        steps: {
+            heading: "Tahapan pendampingan HAKI",
+            intro: "Jenis perlindungan dipilih berdasarkan objek yang ingin dilindungi.",
+            items: [
+                { icon: "messages-square", title: "Konsultasi objek perlindungan", desc: "Mengidentifikasi apakah kebutuhan berkaitan dengan nama atau logo merek, karya, atau invensi." },
+                { icon: "search-check", title: "Pemeriksaan awal data", desc: "Meninjau informasi pemilik, contoh objek, kategori barang atau jasa, serta dokumen pendukung." },
+                { icon: "clipboard-list", title: "Persiapan permohonan", desc: "Membantu menyiapkan data dan dokumen sesuai jenis perlindungan serta mekanisme yang berlaku." },
+                { icon: "file-check", title: "Pengajuan dan pemantauan", desc: "Mendampingi proses administrasi dan membantu menindaklanjuti pemberitahuan dari instansi terkait." }
+            ]
+        },
+        sections: [
+            {
+                heading: "Jenis perlindungan yang perlu dibedakan",
+                items: [
+                    { icon: "badge-check", title: "Merek", desc: "Melindungi tanda pembeda barang atau jasa. Pemeriksaan awal nama dan kelas barang atau jasa dapat membantu menyiapkan permohonan." },
+                    { icon: "copyright", title: "Hak cipta", desc: "Berkaitan dengan karya di bidang ilmu pengetahuan, seni, dan sastra. Jenis karya dan kepemilikan perlu dijelaskan." },
+                    { icon: "lightbulb", title: "Paten", desc: "Berkaitan dengan invensi yang memenuhi persyaratan paten. Informasi teknis dan status pengungkapan invensi perlu ditinjau secara cermat." }
+                ]
+            }
+        ],
+        checklist: {
+            heading: "Informasi awal yang umumnya diperlukan",
+            intro: "Dokumen berbeda untuk merek, hak cipta, dan paten; daftar berikut merupakan titik awal konsultasi.",
+            items: [
+                "Identitas pemohon atau badan usaha",
+                "Nama, logo, atau contoh objek yang akan dilindungi",
+                "Kategori barang atau jasa untuk permohonan merek, jika relevan",
+                "Bukti kepemilikan atau dokumen pendukung objek",
+                "Uraian karya atau invensi untuk jenis perlindungan yang sesuai"
+            ]
+        },
+        whyUs: [
+            { icon: "search-check", text: "Pemetaan jenis perlindungan yang tepat" },
+            { icon: "clipboard-check", text: "Pendampingan persiapan dokumen" },
+            { icon: "messages-square", text: "Penjelasan tahapan administrasi" }
+        ],
+        faqs: [
+            { q: "Apakah merek, hak cipta, dan paten itu sama?", a: "Tidak. Merek melindungi tanda pembeda barang atau jasa, hak cipta melindungi karya yang termasuk cakupannya, sedangkan paten berkaitan dengan invensi yang memenuhi persyaratan." },
+            { q: "Apakah pendaftaran merek pasti diterima?", a: "Tidak. Permohonan dapat melalui pemeriksaan dan dapat menghadapi keberatan atau penolakan berdasarkan ketentuan yang berlaku. Pemeriksaan awal bukan jaminan penerimaan." },
+            { q: "Apakah saya perlu mengecek merek sebelum mendaftar?", a: "Pemeriksaan awal terhadap merek yang sudah terdaftar atau permohonan terkait merupakan langkah yang berguna, meskipun hasil pemeriksaan awal bukan jaminan merek akan diterima." },
+            { q: "Apakah Elkia dapat membantu semua jenis HAKI?", a: "Kami dapat membantu memetakan kebutuhan awal dan persiapan administrasi. Kelayakan, ruang lingkup pendampingan, serta kebutuhan ahli khusus akan dikonfirmasi saat konsultasi." }
+        ],
+        related: ["svc-nib", "svc-bpom", "svc-halal"],
+        updated: "Oktober 2026"
+    }
 };

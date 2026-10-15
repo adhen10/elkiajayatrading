@@ -19,6 +19,7 @@ export default function Navbar() {
     const pathname = normalize(usePathname() ?? "/");
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
+    const [servicesOpen, setServicesOpen] = useState(false);
     const wa = useWaLink();
 
     useEffect(() => {
@@ -27,7 +28,10 @@ export default function Navbar() {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
-    const closeMenu = () => setOpen(false);
+    const closeMenu = () => {
+        setOpen(false);
+        setServicesOpen(false);
+    };
 
     const isActive = (href: string) => {
         const h = normalize(href);
@@ -144,6 +148,58 @@ export default function Navbar() {
                     >
                         {menu.map((l) => {
                             const active = isActive(l.href);
+
+                            if (l.href === "/layanan/") {
+                                return (
+                                    <div key={l.label} className="border-b border-white/5">
+                                        <button
+                                            type="button"
+                                            onClick={() => setServicesOpen((value) => !value)}
+                                            aria-expanded={servicesOpen}
+                                            aria-controls="mobile-services-submenu"
+                                            className={`flex w-full items-center justify-between px-[5%] py-4 text-[16px] font-medium text-left bg-transparent border-none cursor-pointer hover:text-[#D4AF5A] hover:bg-white/5 transition-colors ${active ? "text-[#D4AF5A]" : "text-white/85"}`}
+                                        >
+                                            {l.label}
+                                            <ChevronDown
+                                                size={16}
+                                                className={`text-white/50 transition-transform duration-200 ${servicesOpen ? "rotate-180" : ""}`}
+                                                aria-hidden="true"
+                                            />
+                                        </button>
+                                        <AnimatePresence initial={false}>
+                                            {servicesOpen && (
+                                                <motion.div
+                                                    id="mobile-services-submenu"
+                                                    initial={{ height: 0, opacity: 0 }}
+                                                    animate={{ height: "auto", opacity: 1 }}
+                                                    exit={{ height: 0, opacity: 0 }}
+                                                    transition={{ duration: 0.2, ease: "easeOut" }}
+                                                    className="overflow-hidden bg-white/[0.03]"
+                                                >
+                                                    <Link
+                                                        href="/layanan/"
+                                                        onClick={closeMenu}
+                                                        className="block px-[8%] py-3 text-[14px] font-semibold text-[#D4AF5A] no-underline hover:bg-white/5"
+                                                    >
+                                                        Semua layanan
+                                                    </Link>
+                                                    {services.map((s) => (
+                                                        <Link
+                                                            key={s.id}
+                                                            href={serviceHref(s)}
+                                                            onClick={closeMenu}
+                                                            className="block px-[8%] py-3 text-[14px] text-white/80 no-underline hover:text-[#D4AF5A] hover:bg-white/5"
+                                                        >
+                                                            {s.name}
+                                                        </Link>
+                                                    ))}
+                                                </motion.div>
+                                            )}
+                                        </AnimatePresence>
+                                    </div>
+                                );
+                            }
+
                             return (
                                 <Link
                                     key={l.label}
