@@ -223,9 +223,14 @@ export default function Navbar() {
                             className="fixed right-0 top-0 z-[61] flex h-dvh max-h-dvh w-[88vw] max-w-[380px] flex-col overflow-y-auto border-l border-[#B8942A]/30 bg-[#0D1B3E] shadow-[-18px_0_45px_rgba(0,0,0,0.35)] lg:hidden"
                         >
                             <div className="flex h-[76px] shrink-0 items-center justify-between border-b border-[#B8942A]/30 px-6">
-                                <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D4AF5A]">
-                                    Menu navigasi
-                                </span>
+                                <Link
+                                    href="/"
+                                    onClick={closeMenu}
+                                    aria-label="Elkia – ke beranda"
+                                    className="font-display text-[19px] font-semibold tracking-[4px] text-white no-underline"
+                                >
+                                    EL<span className="text-[#D4AF5A]">KIA</span>
+                                </Link>
                                 <button
                                     type="button"
                                     onClick={closeMenu}
@@ -237,6 +242,19 @@ export default function Navbar() {
                             </div>
 
                             <nav aria-label="Navigasi mobile" className="flex-1 py-2">
+                                <Link
+                                    href="/"
+                                    onClick={closeMenu}
+                                    aria-current={isHome ? "page" : undefined}
+                                    className={mobileLinkCls(isHome)}
+                                >
+                                    <span>Beranda</span>
+                                    <ChevronRight
+                                        size={17}
+                                        className={isHome ? "text-[#D4AF5A]" : "text-white/35"}
+                                        aria-hidden="true"
+                                    />
+                                </Link>
                                 {menu.map((item) => {
                                     const active = isActive(item.href);
 
@@ -326,17 +344,7 @@ export default function Navbar() {
                                 })}
                             </nav>
 
-                            <div className="shrink-0 border-t border-white/10 p-6">
-                                <a
-                                    href={waLink}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    onClick={closeMenu}
-                                    className="flex items-center justify-center gap-2 rounded-sm bg-[#B8942A] px-6 py-3.5 text-[15px] font-semibold text-[#0D1B3E] no-underline transition-colors hover:bg-[#D4AF5A]"
-                                >
-                                    Konsultasi Gratis <ChevronRight size={16} strokeWidth={2.5} />
-                                </a>
-                            </div>
+
                         </motion.aside>
                     </>
                 )}
