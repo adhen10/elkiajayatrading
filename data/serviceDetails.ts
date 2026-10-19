@@ -455,10 +455,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     "svc-bpom": {
         slug: "izin-bpom",
         icon: "shield-check",
-        metaTitle: "Jasa Pengurusan Izin BPOM untuk Produk",
-        metaDescription: "Pendampingan registrasi produk ke BPOM sesuai kategori, termasuk peninjauan data produk, komposisi, label, dan dokumen pendukung.",
+        metaTitle: "Jasa Pengurusan Izin BPOM & Registrasi Produk",
+        metaDescription: "Jasa pengurusan izin BPOM untuk pangan olahan, kosmetik, suplemen, dan obat tradisional. Elkia membantu meninjau kategori produk, label, komposisi, dan dokumen awal.",
         h1: "Jasa Pengurusan Izin BPOM",
-        intro: "Produk pangan olahan, kosmetik, suplemen, dan obat tradisional memiliki jalur registrasi serta persyaratan yang berbeda. Elkia membantu memetakan jalur yang sesuai dan mendampingi persiapan pengajuan.",
+        intro: "Elkia mendampingi persiapan pengurusan izin dan registrasi BPOM untuk pangan olahan, kosmetik, suplemen, dan obat tradisional. Kami membantu meninjau kategori produk, komposisi, label, serta dokumen awal. Jalur dan persyaratan ditentukan berdasarkan karakteristik produk dan ketentuan yang berlaku.",
         facts: [{ label: "Untuk", value: "Produk yang wajib terdaftar di BPOM" }],
         about: {
             heading: "Kapan produk membutuhkan izin BPOM?",
@@ -507,7 +507,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             { q: "Apakah semua produk pangan wajib terdaftar di BPOM?", a: "Tidak selalu melalui jalur yang sama. Sebagian produk dapat masuk kategori SPP-IRT jika memenuhi kriteria, sedangkan produk lain memerlukan registrasi BPOM atau izin yang relevan." },
             { q: "Apakah izin BPOM sama untuk kosmetik dan pangan?", a: "Tidak. Kategori produk memiliki mekanisme, data teknis, dan persyaratan yang berbeda. Jalur harus ditentukan berdasarkan karakteristik produk." },
             { q: "Berapa lama registrasi BPOM?", a: "Durasi bergantung pada kategori produk, jenis pengajuan, kelengkapan dokumen, dan evaluasi. Estimasi sebaiknya diberikan setelah data produk ditinjau." },
-            { q: "Apakah label dan klaim produk ikut diperiksa?", a: "Informasi label dan klaim merupakan bagian yang perlu ditinjau karena harus sesuai dengan kategori dan ketentuan yang berlaku." }
+            { q: "Apakah label dan klaim produk ikut diperiksa?", a: "Informasi label dan klaim merupakan bagian yang perlu ditinjau karena harus sesuai dengan kategori dan ketentuan yang berlaku." },
+            { q: "Berapa biaya jasa pengurusan izin BPOM?", a: "Biaya bergantung pada kategori produk, jalur registrasi, kelengkapan dokumen, dan ruang lingkup pendampingan yang diperlukan. Hubungi Elkia untuk meninjau kebutuhan produk dan memperoleh estimasi yang sesuai." },
+            { q: "Apakah Elkia melayani jasa urus BPOM untuk produk impor?", a: "Elkia dapat membantu meninjau kebutuhan registrasi untuk produk dalam negeri maupun impor. Jalur pengajuan serta dokumen yang diperlukan bergantung pada kategori produk, status produk, dan ketentuan yang berlaku." }
         ],
         related: ["svc-pirt", "svc-halal", "svc-izinedar"],
         updated: "Oktober 2026"
