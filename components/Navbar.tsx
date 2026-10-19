@@ -15,6 +15,13 @@ const normalize = (path: string) =>
 // Beranda diwakili logo Elkia agar navigasi tetap ringkas.
 const menu = navLinks.filter((link) => link.href !== "/");
 
+// Prioritaskan layanan BPOM di submenu navbar tanpa mengubah urutan layanan
+// yang digunakan oleh kartu layanan, halaman layanan, dan footer.
+const navbarServices = [
+    ...services.filter((service) => service.id === "svc-bpom"),
+    ...services.filter((service) => service.id !== "svc-bpom"),
+];
+
 export default function Navbar() {
     const pathname = normalize(usePathname() ?? "/");
     const [scrolled, setScrolled] = useState(false);
@@ -137,7 +144,7 @@ export default function Navbar() {
                                                     Semua layanan
                                                 </Link>
                                             </li>
-                                            {services.map((service) => {
+                                            {navbarServices.map((service) => {
                                                 const serviceActive = isActive(serviceHref(service));
                                                 return (
                                                     <li key={service.id}>
@@ -300,7 +307,7 @@ export default function Navbar() {
                                                             >
                                                                 Semua layanan
                                                             </Link>
-                                                            {services.map((service) => {
+                                                            {navbarServices.map((service) => {
                                                                 const serviceActive = isActive(serviceHref(service));
                                                                 return (
                                                                     <Link
