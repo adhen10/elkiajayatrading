@@ -193,7 +193,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             {
                 q: "Apa hubungan LS dengan Persetujuan Import (PI)?",
                 a: "Untuk sejumlah komoditas, pengajuan Persetujuan Import memerlukan LS atau rekomendasi teknis dari kementerian terkait.",
-            },,
+            },
             { q: "Berapa biaya jasa pengurusan Laporan Surveyor (LS)?", a: "Biaya bergantung pada jenis komoditas, ruang lingkup pemeriksaan, lokasi, dan persyaratan surveyor yang berlaku. Informasi barang dan dokumen awal perlu ditinjau sebelum estimasi diberikan." }
         ],
         related: ["svc-import", "svc-customs"],
@@ -264,7 +264,7 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             {
                 q: "Di mana Persetujuan Import diajukan?",
                 a: "Pengajuan dilakukan melalui sistem INSW (Indonesia National Single Window).",
-            },,
+            },
             { q: "Berapa biaya jasa pengurusan Persetujuan Impor (PI)?", a: "Biaya bergantung pada jenis komoditas, dokumen teknis, kebutuhan rekomendasi atau Laporan Surveyor, serta ruang lingkup pendampingan. Estimasi diberikan setelah kebutuhan impor ditinjau." }
         ],
         related: ["svc-ls", "svc-customs"],
