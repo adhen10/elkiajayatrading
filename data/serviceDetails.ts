@@ -32,10 +32,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         icon: "ship",
         metaTitle: "Jasa Custom Clearance Impor & Ekspor",
         metaDescription:
-            "Jasa custom clearance impor & ekspor: dokumen, bea masuk & pajak, jalur pemeriksaan hingga SPPB. Cepat, biaya terjangkau. Konsultasi gratis.",
+            "Jasa custom clearance impor dan ekspor. Pendampingan pemeriksaan dokumen kepabeanan, bea masuk, pajak, jalur pemeriksaan, dan persiapan hingga SPPB sesuai jenis barang.",
         h1: "Jasa Custom Clearance Impor & Ekspor",
         intro:
-            "Barang impor atau ekspor perlu melewati pemenuhan kewajiban kepabeanan sebelum resmi masuk atau keluar Indonesia. Elkia membantu prosesnya dengan cepat dan biaya yang terjangkau.",
+            "Elkia membantu importir dan eksportir meninjau kebutuhan dokumen kepabeanan, bea masuk, pajak, serta tahapan pemeriksaan. Persyaratan dan proses bergantung pada jenis barang dan ketentuan yang berlaku.",
         facts: [{ label: "Untuk", value: "Importir & eksportir" }],
         about: {
             heading: "Apa itu custom clearance?",
@@ -122,10 +122,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         icon: "clipboard-check",
         metaTitle: "Jasa Pengurusan Laporan Surveyor (LS) Impor",
         metaDescription:
-            "Pengurusan Laporan Surveyor (LS) untuk impor barang Lartas: verifikasi teknis, HS Code, negara asal, hingga syarat SPPB. Cepat, fleksibel, terjangkau.",
+            "Jasa pengurusan Laporan Surveyor (LS) impor untuk komoditas yang dipersyaratkan. Peninjauan awal mencakup HS Code, spesifikasi, negara asal, dan dokumen pendukung sesuai jenis barang.",
         h1: "Jasa Pengurusan Laporan Surveyor (LS)",
         intro:
-            "Untuk banyak barang impor yang diatur Lartas, Laporan Surveyor menjadi syarat agar barang bisa keluar dari kepabeanan. Elkia membantu prosesnya dengan cepat, fleksibel, dan biaya yang terjangkau.",
+            "Elkia membantu importir meninjau apakah komoditasnya memerlukan Laporan Surveyor (LS), lalu memetakan informasi teknis dan dokumen awal seperti spesifikasi, HS Code, serta negara asal. Persyaratan bergantung pada jenis barang dan ketentuan yang berlaku.",
         facts: [{ label: "Untuk", value: "Importir barang Lartas" }],
         about: {
             heading: "Apa itu Laporan Surveyor (LS)?",
@@ -204,10 +204,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         icon: "file-check",
         metaTitle: "Jasa Pengurusan Persetujuan Import (PI)",
         metaDescription:
-            "Pengurusan Persetujuan Import (PI) Kemendag untuk barang Lartas: NIB/API, LS atau rekomendasi teknis, RIB, via INSW. Cepat, fleksibel, terjangkau.",
+            "Jasa pengurusan Persetujuan Import (PI) untuk komoditas yang membutuhkan persetujuan. Elkia membantu meninjau NIB, dokumen teknis, LS atau rekomendasi, dan persyaratan sesuai jenis barang.",
         h1: "Jasa Pengurusan Persetujuan Import (PI)",
         intro:
-            "Persetujuan Import adalah izin resmi untuk memasukkan barang tertentu ke Indonesia. Elkia membantu pengurusannya dengan cepat, fleksibel, dan biaya yang terjangkau.",
+            "Elkia mendampingi peninjauan kebutuhan Persetujuan Import (PI) untuk komoditas yang diwajibkan memenuhi ketentuan impor. Kebutuhan NIB, dokumen teknis, LS, RIB, serta jalur pengajuan bergantung pada jenis barang dan aturan yang berlaku.",
         facts: [{ label: "Diajukan melalui", value: "INSW" }],
         about: {
             heading: "Apa itu Persetujuan Import (PI)?",
@@ -272,10 +272,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     "svc-nib": {
         slug: "nib-izin-usaha",
         icon: "file-check",
-        metaTitle: "Jasa Pengurusan NIB & Legalitas Usaha melalui OSS",
-        metaDescription: "Pendampingan pengurusan NIB dan perizinan usaha melalui OSS, termasuk penyesuaian KBLI serta pengecekan Sertifikat Standar sesuai kegiatan usaha.",
+        metaTitle: "Jasa Pengurusan NIB & Izin Usaha melalui OSS",
+        metaDescription: "Jasa pengurusan NIB dan izin usaha melalui OSS. Elkia membantu meninjau KBLI, tingkat risiko, serta kebutuhan Sertifikat Standar atau izin tambahan sesuai kegiatan usaha.",
         h1: "Jasa Pengurusan NIB & Izin Usaha",
-        intro: "Mulai usaha dengan dasar legalitas yang sesuai. Elkia membantu meninjau data usaha, menentukan kebutuhan perizinan, dan mendampingi proses melalui sistem OSS.",
+        intro: "Butuh jasa pengurusan NIB atau izin usaha? Elkia membantu meninjau data pelaku usaha, kesesuaian KBLI, dan kebutuhan perizinan melalui OSS berdasarkan kegiatan serta tingkat risiko usaha.",
         facts: [{ label: "Sistem", value: "OSS Berbasis Risiko" }],
         about: {
             heading: "Apa itu NIB dan perizinan usaha?",
@@ -333,10 +333,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     "svc-pirt": {
         slug: "izin-pirt",
         icon: "clipboard-check",
-        metaTitle: "Jasa Pengurusan Izin PIRT untuk Produk Pangan",
-        metaDescription: "Pendampingan pengurusan SPP-IRT untuk produk pangan olahan yang memenuhi kriteria, termasuk pengecekan kelengkapan data dan persyaratan.",
+        metaTitle: "Jasa Pengurusan Izin PIRT (SPP-IRT) untuk Produk Pangan",
+        metaDescription: "Jasa pengurusan izin PIRT atau SPP-IRT untuk produk pangan rumahan yang memenuhi kriteria. Elkia membantu meninjau kategori produk, label, data, dan persyaratan pengajuan.",
         h1: "Jasa Pengurusan Izin PIRT",
-        intro: "Pelaku usaha pangan rumahan perlu memastikan produknya memenuhi persyaratan keamanan pangan dan perizinan yang sesuai. Elkia membantu meninjau kebutuhan serta mendampingi persiapan pengajuan.",
+        intro: "Elkia membantu pelaku usaha pangan rumahan meninjau apakah produknya sesuai kriteria SPP-IRT (izin PIRT), menyiapkan data dan label awal, serta memahami tahapan pengajuan. Jalur perizinan ditentukan berdasarkan karakteristik produk dan ketentuan yang berlaku.",
         facts: [{ label: "Untuk", value: "Pangan olahan yang memenuhi kriteria SPP-IRT" }],
         about: {
             heading: "Apa itu PIRT?",
@@ -394,10 +394,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     "svc-halal": {
         slug: "sertifikasi-halal",
         icon: "shield-check",
-        metaTitle: "Jasa Pendampingan Sertifikasi Halal",
-        metaDescription: "Pendampingan persiapan sertifikasi halal: peninjauan bahan, proses produk halal, dokumen pendukung, dan pengajuan sesuai jalur yang berlaku.",
+        metaTitle: "Jasa Pendampingan Sertifikasi Halal BPJPH",
+        metaDescription: "Jasa pendampingan sertifikasi halal untuk pelaku usaha. Elkia membantu meninjau bahan, proses produk halal, dan dokumen sesuai jalur pengajuan serta kriteria yang berlaku.",
         h1: "Jasa Pendampingan Sertifikasi Halal",
-        intro: "Persiapan sertifikasi halal membutuhkan data bahan dan proses yang tertata. Elkia mendampingi pelaku usaha meninjau kebutuhan dokumen dan memahami tahapan pengajuan sesuai kategori produknya.",
+        intro: "Elkia mendampingi persiapan sertifikasi halal dengan meninjau bahan, proses produk halal, dan dokumen usaha. Jalur pengajuan serta persyaratan bergantung pada jenis produk, skema yang memenuhi kriteria, dan ketentuan yang berlaku.",
         facts: [{ label: "Fokus", value: "Bahan dan proses produk halal" }],
         about: {
             heading: "Apa itu sertifikasi halal?",
@@ -518,10 +518,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     "svc-izinedar": {
         slug: "izin-edar-produk",
         icon: "badge-check",
-        metaTitle: "Jasa Pengurusan Izin Edar Produk",
-        metaDescription: "Pendampingan identifikasi dan persiapan izin edar produk seperti alat kesehatan, PKRT, serta dokumen impor terkait sesuai kewenangan instansi.",
+        metaTitle: "Jasa Pengurusan Izin Edar Produk Alkes & PKRT",
+        metaDescription: "Jasa pengurusan izin edar produk, termasuk alat kesehatan dan PKRT. Elkia membantu memetakan instansi, jalur perizinan, serta dokumen terkait sesuai kategori produk.",
         h1: "Jasa Pengurusan Izin Edar Produk",
-        intro: "Sebelum dipasarkan, produk tertentu perlu memenuhi persyaratan izin edar dari instansi yang berwenang. Elkia membantu meninjau kategori produk dan memetakan jalur serta dokumen yang relevan.",
+        intro: "Elkia membantu pelaku usaha mengidentifikasi kebutuhan izin edar berdasarkan fungsi dan kategori produk, termasuk alat kesehatan, PKRT, serta dokumen impor terkait. Instansi, jalur, dan persyaratan disesuaikan dengan ketentuan yang berlaku.",
         facts: [{ label: "Fokus", value: "Identifikasi jalur izin edar" }],
         about: {
             heading: "Apa yang dimaksud izin edar produk?",
@@ -579,10 +579,10 @@ export const serviceDetails: Record<string, ServiceDetail> = {
     "svc-haki": {
         slug: "hak-kekayaan-intelektual",
         icon: "copyright",
-        metaTitle: "Jasa Pendampingan Hak Kekayaan Intelektual (HAKI)",
-        metaDescription: "Pendampingan pendaftaran merek dan pemetaan kebutuhan hak cipta atau paten, termasuk pemeriksaan awal informasi dan dokumen pendukung.",
+        metaTitle: "Jasa Pendaftaran Merek & Pendampingan HAKI",
+        metaDescription: "Jasa pendampingan pendaftaran merek dan pemetaan kebutuhan HAKI, termasuk hak cipta atau paten. Penanganan dan dokumen disesuaikan dengan jenis perlindungan.",
         h1: "Jasa Pendampingan Hak Kekayaan Intelektual",
-        intro: "Merek, karya, dan invensi memiliki bentuk perlindungan yang berbeda. Elkia membantu mengidentifikasi kebutuhan awal dan mendampingi persiapan dokumen untuk jalur kekayaan intelektual yang sesuai.",
+        intro: "Elkia menyediakan pendampingan awal untuk pendaftaran merek serta pemetaan kebutuhan perlindungan HAKI, termasuk hak cipta atau paten. Jenis perlindungan, pemeriksaan, dan dokumen disesuaikan dengan objek yang ingin dilindungi.",
         facts: [{ label: "Fokus", value: "Merek, hak cipta, dan paten" }],
         about: {
             heading: "Apa itu Hak Kekayaan Intelektual?",
