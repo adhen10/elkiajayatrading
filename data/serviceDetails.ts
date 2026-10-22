@@ -193,7 +193,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             {
                 q: "Apa hubungan LS dengan Persetujuan Import (PI)?",
                 a: "Untuk sejumlah komoditas, pengajuan Persetujuan Import memerlukan LS atau rekomendasi teknis dari kementerian terkait.",
-            },
+            },,
+            { q: "Berapa biaya jasa pengurusan Laporan Surveyor (LS)?", a: "Biaya bergantung pada jenis komoditas, ruang lingkup pemeriksaan, lokasi, dan persyaratan surveyor yang berlaku. Informasi barang dan dokumen awal perlu ditinjau sebelum estimasi diberikan." }
         ],
         related: ["svc-import", "svc-customs"],
         updated: "Oktober 2026",
@@ -205,9 +206,9 @@ export const serviceDetails: Record<string, ServiceDetail> = {
         metaTitle: "Jasa Pengurusan Persetujuan Impor (PI)",
         metaDescription:
             "Jasa pengurusan Persetujuan Impor (PI) untuk barang yang diwajibkan. Peninjauan NIB, LS atau rekomendasi teknis, RIB, dan dokumen pendukung.",
-        h1: "Jasa Pengurusan Persetujuan Import (PI)",
+        h1: "Jasa Pengurusan Persetujuan Impor (PI)",
         intro:
-            "Elkia mendampingi peninjauan kebutuhan Persetujuan Import (PI) untuk komoditas yang diwajibkan memenuhi ketentuan impor. Kebutuhan NIB, dokumen teknis, LS, RIB, serta jalur pengajuan bergantung pada jenis barang dan aturan yang berlaku.",
+            "Elkia mendampingi peninjauan kebutuhan Persetujuan Impor (PI) untuk komoditas yang diwajibkan memenuhi ketentuan impor. Kebutuhan NIB, dokumen teknis, LS, RIB, serta jalur pengajuan bergantung pada jenis barang dan aturan yang berlaku.",
         facts: [{ label: "Diajukan melalui", value: "INSW" }],
         about: {
             heading: "Apa itu Persetujuan Import (PI)?",
@@ -263,7 +264,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             {
                 q: "Di mana Persetujuan Import diajukan?",
                 a: "Pengajuan dilakukan melalui sistem INSW (Indonesia National Single Window).",
-            },
+            },,
+            { q: "Berapa biaya jasa pengurusan Persetujuan Impor (PI)?", a: "Biaya bergantung pada jenis komoditas, dokumen teknis, kebutuhan rekomendasi atau Laporan Surveyor, serta ruang lingkup pendampingan. Estimasi diberikan setelah kebutuhan impor ditinjau." }
         ],
         related: ["svc-ls", "svc-customs"],
         updated: "Oktober 2026",
@@ -324,7 +326,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             { q: "Apakah semua usaha membutuhkan NIB?", a: "NIB merupakan identitas pelaku usaha dalam sistem OSS. Kewajiban dan tahapan perizinan yang perlu dipenuhi mengikuti bentuk usaha, kegiatan, serta ketentuan yang berlaku." },
             { q: "Apakah NIB sudah cukup untuk menjalankan semua usaha?", a: "Belum tentu. Berdasarkan kegiatan dan tingkat risikonya, usaha dapat memerlukan Sertifikat Standar, izin, atau persyaratan tambahan." },
             { q: "Apa itu KBLI?", a: "KBLI adalah klasifikasi kegiatan ekonomi yang digunakan untuk mengidentifikasi bidang usaha. Pemilihannya perlu sesuai dengan aktivitas usaha yang sebenarnya." },
-            { q: "Bisakah Elkia membantu mengecek izin yang dibutuhkan?", a: "Ya. Kami dapat membantu meninjau informasi awal usaha dan memetakan kebutuhan perizinan untuk dikonfirmasi berdasarkan ketentuan yang berlaku." }
+            { q: "Bisakah Elkia membantu mengecek izin yang dibutuhkan?", a: "Ya. Kami dapat membantu meninjau informasi awal usaha dan memetakan kebutuhan perizinan untuk dikonfirmasi berdasarkan ketentuan yang berlaku." },
+            { q: "Berapa biaya jasa pengurusan NIB dan izin usaha?", a: "Biaya pendampingan bergantung pada bentuk usaha, jumlah dan jenis kegiatan, kondisi data OSS, serta izin tambahan yang diperlukan. Kebutuhan akan ditinjau terlebih dahulu sebelum estimasi diberikan." }
         ],
         related: ["svc-pirt", "svc-halal", "svc-bpom"],
         updated: "Oktober 2026"
@@ -385,7 +388,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             { q: "Apakah semua makanan rumahan bisa mendapatkan PIRT?", a: "Tidak. SPP-IRT hanya berlaku untuk jenis pangan olahan yang memenuhi kriteria. Kategori produk dan cara produksinya perlu diperiksa terlebih dahulu." },
             { q: "Apakah produk yang tidak memenuhi kriteria PIRT bisa didaftarkan ke BPOM?", a: "Sebagian produk memang perlu mengikuti jalur perizinan BPOM atau ketentuan lain yang berlaku. Penentuan jalurnya bergantung pada karakteristik produk." },
             { q: "Apakah label produk perlu disiapkan?", a: "Informasi label merupakan bagian penting yang perlu ditinjau. Rincian yang wajib dicantumkan bergantung pada jenis pangan dan aturan yang berlaku." },
-            { q: "Berapa lama pengurusan PIRT?", a: "Waktu proses bergantung pada kelengkapan data, pemenuhan persyaratan, dan proses instansi berwenang. Estimasi lebih tepat diberikan setelah produk ditinjau." }
+            { q: "Berapa lama pengurusan PIRT?", a: "Waktu proses bergantung pada kelengkapan data, pemenuhan persyaratan, dan proses instansi berwenang. Estimasi lebih tepat diberikan setelah produk ditinjau." },
+            { q: "Berapa biaya jasa pengurusan PIRT atau SPP-IRT?", a: "Biaya bergantung pada kondisi produk, kelengkapan dokumen, dan ruang lingkup pendampingan. Kelayakan produk terhadap kriteria SPP-IRT perlu ditinjau terlebih dahulu." }
         ],
         related: ["svc-nib", "svc-halal", "svc-bpom"],
         updated: "Oktober 2026"
@@ -446,7 +450,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             { q: "Apakah semua usaha dapat menggunakan jalur self-declare?", a: "Tidak. Skema pernyataan pelaku usaha hanya dapat digunakan apabila usaha dan produknya memenuhi kriteria serta persyaratan yang berlaku. Kelayakan perlu diperiksa terlebih dahulu." },
             { q: "Apakah sertifikat halal pasti terbit setelah mengajukan?", a: "Tidak otomatis. Penerbitan mengikuti pemeriksaan, pemenuhan persyaratan, dan keputusan pihak berwenang sesuai jalur sertifikasi." },
             { q: "Apakah daftar bahan perlu disiapkan?", a: "Ya, informasi bahan dan dokumen pendukungnya merupakan bagian penting dalam penilaian. Kebutuhan rinci bergantung pada produk dan bahan yang digunakan." },
-            { q: "Berapa lama proses sertifikasi halal?", a: "Waktunya bergantung pada jalur pengajuan, kelengkapan dokumen, proses pemeriksaan, dan tindak lanjut yang diperlukan. Estimasi diberikan setelah peninjauan awal." }
+            { q: "Berapa lama proses sertifikasi halal?", a: "Waktunya bergantung pada jalur pengajuan, kelengkapan dokumen, proses pemeriksaan, dan tindak lanjut yang diperlukan. Estimasi diberikan setelah peninjauan awal." },
+            { q: "Berapa biaya pendampingan sertifikasi halal?", a: "Biaya dan kebutuhan proses bergantung pada jenis usaha, kategori produk, jalur sertifikasi yang memenuhi kriteria, serta ruang lingkup pendampingan. Estimasi diberikan setelah peninjauan awal." }
         ],
         related: ["svc-nib", "svc-pirt", "svc-bpom"],
         updated: "Oktober 2026"
@@ -570,7 +575,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             { q: "Apakah semua produk memerlukan izin edar?", a: "Tidak semua produk mengikuti kewajiban yang sama. Kebutuhan izin ditentukan oleh kategori, tujuan penggunaan, dan peraturan yang berlaku." },
             { q: "Apakah izin edar alat kesehatan sama dengan izin PKRT?", a: "Tidak. Keduanya memiliki klasifikasi dan persyaratan yang berbeda sehingga perlu diidentifikasi terlebih dahulu." },
             { q: "Apa itu SKI BPOM?", a: "SKI merupakan dokumen keterangan impor BPOM untuk kategori produk yang berada dalam kewenangannya dan memenuhi ketentuan terkait. Kebutuhannya bergantung pada kategori serta status produk." },
-            { q: "Bisakah pengurusan dimulai sebelum semua dokumen lengkap?", a: "Konsultasi dan pemetaan kebutuhan dapat dimulai dengan informasi awal. Pengajuan resmi baru dapat dipersiapkan setelah persyaratan yang diwajibkan dipenuhi." }
+            { q: "Bisakah pengurusan dimulai sebelum semua dokumen lengkap?", a: "Konsultasi dan pemetaan kebutuhan dapat dimulai dengan informasi awal. Pengajuan resmi baru dapat dipersiapkan setelah persyaratan yang diwajibkan dipenuhi." },
+            { q: "Berapa biaya pengurusan izin edar produk?", a: "Biaya bergantung pada kategori produk, instansi yang berwenang, jenis pengajuan, dan kelengkapan dokumen. Kebutuhan produk perlu diidentifikasi sebelum estimasi diberikan." }
         ],
         related: ["svc-bpom", "svc-import", "svc-customs"],
         updated: "Oktober 2026"
@@ -631,7 +637,8 @@ export const serviceDetails: Record<string, ServiceDetail> = {
             { q: "Apakah merek, hak cipta, dan paten itu sama?", a: "Tidak. Merek melindungi tanda pembeda barang atau jasa, hak cipta melindungi karya yang termasuk cakupannya, sedangkan paten berkaitan dengan invensi yang memenuhi persyaratan." },
             { q: "Apakah pendaftaran merek pasti diterima?", a: "Tidak. Permohonan dapat melalui pemeriksaan dan dapat menghadapi keberatan atau penolakan berdasarkan ketentuan yang berlaku. Pemeriksaan awal bukan jaminan penerimaan." },
             { q: "Apakah saya perlu mengecek merek sebelum mendaftar?", a: "Pemeriksaan awal terhadap merek yang sudah terdaftar atau permohonan terkait merupakan langkah yang berguna, meskipun hasil pemeriksaan awal bukan jaminan merek akan diterima." },
-            { q: "Apakah Elkia dapat membantu semua jenis HAKI?", a: "Kami dapat membantu memetakan kebutuhan awal dan persiapan administrasi. Kelayakan, ruang lingkup pendampingan, serta kebutuhan ahli khusus akan dikonfirmasi saat konsultasi." }
+            { q: "Apakah Elkia dapat membantu semua jenis HAKI?", a: "Kami dapat membantu memetakan kebutuhan awal dan persiapan administrasi. Kelayakan, ruang lingkup pendampingan, serta kebutuhan ahli khusus akan dikonfirmasi saat konsultasi." },
+            { q: "Berapa biaya jasa pendaftaran merek atau HAKI?", a: "Biaya bergantung pada jenis perlindungan yang diperlukan, jumlah permohonan atau kelas merek, serta ruang lingkup pendampingan. Rincian estimasi diberikan setelah kebutuhan ditinjau." }
         ],
         related: ["svc-nib", "svc-bpom", "svc-halal"],
         updated: "Oktober 2026"
